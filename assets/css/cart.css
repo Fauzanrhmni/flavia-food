@@ -1,0 +1,149 @@
+:root {
+	--yellow: #ffcc00;
+	--red: #cd0067;
+	--green: #88c23a;
+	--white: #fff;
+	--white-gray: #f0f0f0;
+	--gray: #cecece;
+	--black: #000;
+	--shadow: rgba(132, 139, 200, 0.18);
+	--box-shadow: 0 2rem 3rem var(--shadow);
+}
+
+.kembali {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 6rem;
+	width: 74%;
+	margin-left: 22%;
+	margin-right: 4%;
+	margin-top: 6rem;
+}
+
+.kembali .btn-delete {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.7rem 1rem;
+	background-color: var(--red);
+	border-radius: 0.5rem;
+	color: var(--white);
+}
+
+.kembali .btn-delete:hover {
+	background-color: #b8025d;
+}
+
+.kembali .btn-kembali h3 {
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+.kembali .btn-delete h3 {
+	font-size: 1rem;
+	font-weight: 500;
+	margin-left: 0.5rem;
+}
+
+.kembali .btn-kembali span {
+	transform: scale(0.7);
+}
+
+.keranjang {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 2rem;
+	margin-top: 6rem;
+	width: 74%;
+	margin-left: 22%;
+	margin-right: 4%;
+	margin-top: 1.5rem;
+}
+
+.keranjang .product-item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 1.5rem;
+	border: 2px solid var(--gray);
+	padding: 1rem;
+}
+
+.keranjang .product-item img {
+	width: 8rem;
+	height: 8rem;
+	object-fit: cover;
+	margin-right: 1.5rem;
+}
+
+.keranjang .product-item .title .product-title {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.keranjang .product-item .title .product-title h1 {
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+.keranjang .product-item .title .product-title span {
+	color: var(--yellow);
+	cursor: pointer;
+}
+
+.keranjang .product-item .title .product-title span:hover {
+	color: var(--black);
+}
+
+.keranjang .product-item .title .jumlah {
+	margin-bottom: 1rem;
+}
+
+.keranjang .product-item .title .jumlah label,
+.keranjang .product-item .title .product-price label,
+.total label {
+	font-size: 0.8rem;
+}
+
+.keranjang .product-item .title .jumlah h4,
+.keranjang .product-item .title .product-price h4,
+.total h4 {
+	font-size: 1.3rem;
+	font-weight: 500;
+}
+
+.keranjang .product-item .title .product-price {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 20rem;
+}
+
+.bayar {
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	/* width: 78%; */
+	margin-left: 22%;
+	margin-top: 2rem;
+	padding: 0 4% 1rem 0;
+}
+
+.bayar .total {
+	margin-right: 1rem;
+}
+
+.bayar .checkout {
+	padding: 0.7rem 1rem;
+	background-color: var(--yellow);
+	border-radius: 0.5rem;
+	color: var(--white);
+	font-weight: 500;
+}
+
+.bayar .checkout:hover {
+	background-color: #e1b400;
+}

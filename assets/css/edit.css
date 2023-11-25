@@ -1,0 +1,92 @@
+:root {
+	--color-primary: #ffcc00;
+	--color-danger: #cd0067;
+	--color-success: #88c23a;
+	--color-warning: #ffcc00;
+	--color-white: #fff;
+	--color-info-dark: #7d8da1;
+	--color-info-light: #dce1eb;
+	--color-dark: #363949;
+	--color-light: rgba(205, 205, 205, 0.18);
+	--color-primary-variant: #111e88;
+	--color-dark-variant: #677483;
+	--color-background: #f6f6f9;
+
+	--card-border-radius: 2rem;
+	--border-radius-1: 0.4rem;
+	--border-radius-2: 0.8rem;
+	--border-radius-3: 1.2rem;
+
+	--card-padding: 1.8rem;
+	--padding-1: 1.2rem;
+
+	--box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.edit-brg {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-radius: var(--border-radius-2);
+}
+
+.edit-brg form {
+  display: grid;
+  grid-template-rows: 5, 1fr;
+  width: 100%;
+  gap: 1rem;
+}
+
+.edit-brg .input {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.edit-brg .input label {
+  font-size: 1.1rem;
+}
+
+.edit-brg .input input {
+  width: 100%;
+  border: 2px solid var(--color-info-light);
+  border-radius: var(--border-radius-1);
+  padding: 0.8rem 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.edit-brg .button {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 5rem;
+}
+
+.edit-brg .button .save {
+  border-radius: var(--border-radius-1);
+  padding: 0.8rem 1.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.edit-brg .button .save:hover {
+  background-color: #f1c100;
+}
+
+.edit-brg .button .cancel {
+  border-radius: var(--border-radius-1);
+  padding: 0.8rem 1.5rem;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.edit-brg .button .cancel:hover {
+  background-color: #474954;
+}
+

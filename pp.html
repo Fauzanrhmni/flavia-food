@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Script JavaScript</title>
+</head>
+<body>
+
+    <label for="pilihan">Pilih:</label>
+    <select id="pilihan" onchange="tampilkanPilihan()">
+        <option value="pilihan1">Pilihan 1</option>
+        <option value="pilihan2">Pilihan 2</option>
+        <option value="pilihan3">Pilihan 3</option>
+    </select>
+
+    <div id="hasilPilihan"></div>
+
+    <script>
+        function tampilkanPilihan() {
+            // Dapatkan elemen select
+            var selectElem = document.getElementById("pilihan");
+
+            // Dapatkan nilai pilihan yang dipilih
+            var nilaiPilihan = selectElem.value;
+
+            // Tampilkan nilai pilihan di elemen dengan id "hasilPilihan"
+            var hasilElem = document.getElementById("hasilPilihan");
+            hasilElem.innerHTML = "Anda memilih: " + nilaiPilihan;
+        }
+    </script>
+
+</body>
+</html>
