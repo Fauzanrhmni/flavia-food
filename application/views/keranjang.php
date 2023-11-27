@@ -19,6 +19,7 @@
       <div class="title">
         <div class="product-title">
           <h1><?= $items['name'] ?></h1>
+          <a href="<?= base_url('dashboard/delete_item/' . $items['rowid']); ?>">
           <span class="material-symbols-outlined"> delete </span>
         </div>
         <div class="jumlah">

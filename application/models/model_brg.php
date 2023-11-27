@@ -40,7 +40,7 @@ class Model_brg extends CI_Model
 		if ($result->num_rows() > 0) {
 			return $result->row();
 		} else {
-			return false; // Mengembalikan false jika data tidak ditemukan
+			return false;
 		}
 	}
 	
