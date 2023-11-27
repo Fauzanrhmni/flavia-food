@@ -15,7 +15,7 @@
 
   <?php foreach ($this->cart->contents() as $items) : ?>
   <div class="product-item">
-    <img src="<?= base_url(); ?>upload/pizza.jpg">
+    <img src="<?= base_url(); ?>./upload/pizza.jpg">
     <div class="title">
       <div class="product-title">
         <h1><?= $items['name'] ?></h1>

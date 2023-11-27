@@ -13,7 +13,7 @@
       </div>
 
       <div class="content">
-        <?php foreach ($barang as $brg) : ?>
+        <?php foreach ($mie as $brg) : ?>
         <div class="product">
           <div class="img-product">
             <img src="<?= base_url().'/upload/'.$brg->gambar ?>" class="img-button" />
@@ -39,7 +39,7 @@
               <h2>Rp. <?= number_format($brg->harga, 0,',','.') ?></h2>
             </div>
 
-            <?= anchor('dashboard/addkeranjang/'.$brg->id, '<button class="tambah">Tambah</button>')?>
+            <?= anchor('kategori/addkeranjangmie/'.$brg->id, '<button class="tambah">Tambah</button>')?>
           </div>
         </div>
         <?php endforeach;?>

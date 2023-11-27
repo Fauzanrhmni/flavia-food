@@ -118,19 +118,34 @@ body {
 .sidebar .filter h2 {
   font-size: 1rem;
   padding: 1rem 0;
-  /* margin-bottom: 1rem; */
-}
-
-.sidebar .filter .kategori {
-  display: block;
-}
-
-.sidebar .filter .kategori .checkbox {
   margin-bottom: 0.5rem;
 }
 
-.sidebar .filter .kategori .checkbox label input {
+.sidebar .filter .kategori {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.sidebar .filter .kategori .checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar .filter .kategori .checkbox a {
+  display: flex;
+  align-items: center;
   margin-right: 0.3rem;
+  color: var(--black);
+}
+
+.sidebar .filter .kategori .checkbox a span {
+  margin-right: 0.5rem;
+}
+
+.sidebar .filter .kategori .checkbox a:hover {
+  color: var(--yellow);
 }
 
 /* Navbar Nav */
@@ -289,10 +304,15 @@ body {
   width: 100%;
 }
 
-.hero .content .product .img-product #favorite {
+.hero .content .product .img-product #visibility {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
+  color: var(--yellow);
+}
+
+.hero .content .product .img-product #visibility:hover {
+  color: #e1b400;
 }
 
 .hero .content .product .product-name h2 {
@@ -393,325 +413,4 @@ footer .credit a {
 
 footer .credit a:hover {
   color: var(--yellow);
-}
-
-/* Modal Box */
-/* Item Detail */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.modal-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  position: relative;
-  background-color: var(--white);
-  color: var(--black);
-  margin: 4% 10%;
-  padding: 2rem;
-  width: 100%;
-  animation: animateModal 0.5s;
-}
-
-/* Modal Animation */
-@keyframes animateModal {
-  from {
-    top: -300px;
-    opacity: 0;
-  }
-
-  to {
-    top: 0;
-    opacity: 1;
-  }
-}
-
-.modal-container .close-icon {
-  position: absolute;
-  right: 1rem;
-  color: var(--black);
-  font-size: 1.5rem;
-}
-
-.modal-container .close-icon:hover {
-  color: var(--gray);
-}
-
-.modal-img {
-  background-color: var(--white);
-}
-
-.modal-img .img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 20rem;
-  background-color: var(--white-gray);
-  padding: 1rem;
-  margin-bottom: 2rem;
-  border-radius: 0.5rem;
-}
-
-.modal-img .img img {
-  height: 100%;
-}
-
-.modal-img .location {
-  display: grid;
-  border: 2px solid var(--white-gray);
-  border-radius: 0.5rem;
-}
-
-.modal-img .location .label {
-  display: grid;
-  padding: 0 1rem;
-}
-
-.modal-img .location .label label {
-  font-size: 0.9rem;
-}
-
-.modal-img .location .label .label-flavia {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.9rem 0;
-  border-bottom: 2px solid var(--white-gray);
-}
-
-.modal-img .location .label .label-flavia span {
-  color: var(--green);
-}
-
-.modal-img .location .label .label-location {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.7rem 0;
-}
-
-.modal-img .location .label .label-location .cta {
-  padding: 0.2rem 0.9rem;
-  background-color: var(--white);
-  border: 2px solid var(--red);
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  color: var(--red);
-  border-radius: 0.3rem;
-}
-
-.modal-detail {
-  display: grid;
-  grid-template-rows: repeat(5, max-content);
-  gap: 1.5rem;
-  background-color: var(--white);
-}
-
-.modal-detail h3 {
-  font-size: 0.9rem;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-
-.modal-detail .title .arrival {
-  background-color: var(--green);
-  padding: 0.4rem 1rem;
-  font-size: 0.7rem;
-  border-radius: 0.3rem;
-  font-weight: 600;
-  color: var(--white);
-}
-
-.modal-detail .title h1 {
-  margin-top: 0.8rem;
-  font-weight: 500;
-  font-size: 2.3rem;
-}
-
-.modal-detail h2 {
-  font-weight: 500;
-  font-size: 1.7rem;
-}
-
-.modal-detail .saus .saus-produk {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.modal-detail .saus .saus-produk .cta {
-  border: 2px solid var(--gray);
-  border-radius: 0.3rem;
-  padding: 0.2rem 1rem;
-  font-size: 0.7rem;
-  font-weight: 600;
-  margin-top: 0.5rem;
-  color: var(--gray);
-}
-
-.modal-detail .saus .saus-produk .cta:hover {
-  border: 2px solid var(--yellow);
-  color: var(--yellow);
-}
-
-.modal-detail .deskripsi p {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  text-align: justify;
-}
-
-.modal-detail .detail .details {
-  margin-top: 0.5rem;
-}
-
-.modal-detail .detail .details p {
-  font-size: 0.9rem;
-}
-
-.modal-order {
-  display: grid;
-  padding: 2rem;
-  background-color: var(--white-gray);
-  height: 100%;
-}
-
-.modal-order .order {
-  display: grid;
-  grid-template-rows: repeat(4, min-content);
-  background-color: var(--white);
-  border-radius: 0.8rem;
-  padding: 1.5rem;
-}
-
-.modal-order .order h2 {
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--white-gray);
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.modal-order .order .detail-order {
-  padding: 0.5rem 0;
-  border-bottom: 2px solid var(--white-gray);
-}
-
-.modal-order .order .detail-order .quantity {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 0;
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.modal-order .order .detail-order .quantity .jumlah {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.8rem;
-  padding: 0.3rem;
-  background-color: var(--white-gray);
-  border-radius: 0.4rem;
-}
-
-.modal-order .order .detail-order .quantity .jumlah .minplus {
-  padding: 0.1rem 0.5rem;
-  background-color: var(--white);
-  border-radius: 0.2rem;
-}
-
-.modal-order .order .detail-order .harga {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.9rem;
-  padding: 0.3rem 0;
-}
-
-.modal-order .order .detail-order .harga .cta {
-  padding: 0.2rem 0.5rem;
-  margin-left: 0.3rem;
-  background-color: var(--white);
-  border: 2px solid var(--yellow);
-  color: var(--yellow);
-  font-size: 0.7rem;
-  border-radius: 0.3rem;
-}
-
-.modal-order .order .detail-order .harga .biaya-lain {
-  padding: 0.1rem 0.5rem;
-  margin-left: 0.3rem;
-  font-size: 0.7rem;
-  background-color: var(--white);
-  border: 1px solid var(--black);
-  border-radius: 50%;
-}
-
-.modal-order .order .detail-order .notes {
-  display: grid;
-  padding: 0.5rem 0;
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.modal-order .order .detail-order .notes input {
-  margin-top: 0.5rem;
-  border: 2px solid var(--white-gray);
-  padding: 0.5rem 0 2rem 0.5rem;
-  font-family: "Poppins", sans-serif;
-  border-radius: 0.5rem;
-}
-
-.modal-order .order .total {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 0;
-  font-size: 1rem;
-  font-weight: 600;
-  border-bottom: 2px solid var(--white-gray);
-}
-
-.modal-order .order .like-buy {
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  gap: 0.5rem;
-}
-
-.modal-order .order .like-buy .like {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.5rem;
-  border: 2px solid var(--white-gray);
-  background-color: var(--white);
-  width: 2.5rem;
-  height: 2.5rem;
-  color: var(--white-gray);
-  border-radius: 0.3rem;
-}
-
-.modal-order .order .like-buy .like:hover {
-  background-color: var(--yellow);
-  color: var(--white);
-  border: none;
-}
-
-.modal-order .order .like-buy .buy {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.5rem;
-  background-color: var(--yellow);
-  width: 100%;
-  color: var(--white);
-  border-radius: 0.3rem;
 }

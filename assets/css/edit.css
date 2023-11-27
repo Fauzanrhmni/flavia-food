@@ -24,69 +24,69 @@
 }
 
 .edit-brg {
-  margin-top: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5rem 0;
-  border-radius: var(--border-radius-2);
+	margin-top: 1.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1.5rem 0;
+	border-radius: var(--border-radius-2);
 }
 
 .edit-brg form {
-  display: grid;
-  grid-template-rows: 5, 1fr;
-  width: 100%;
-  gap: 1rem;
+	display: grid;
+	grid-template-rows: 5, 1fr;
+	width: 100%;
+	gap: 1rem;
 }
 
 .edit-brg .input {
-  display: grid;
-  gap: 0.5rem;
+	display: grid;
+	gap: 0.5rem;
 }
 
 .edit-brg .input label {
-  font-size: 1.1rem;
+	font-size: 1.1rem;
 }
 
-.edit-brg .input input {
-  width: 100%;
-  border: 2px solid var(--color-info-light);
-  border-radius: var(--border-radius-1);
-  padding: 0.8rem 1rem;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
+.edit-brg .input input,
+.edit-brg .input select {
+	width: 100%;
+	border: 2px solid var(--color-info-light);
+	border-radius: var(--border-radius-1);
+	padding: 0.8rem 1rem;
+	font-family: "Poppins", sans-serif;
+	font-weight: 400;
 }
 
 .edit-brg .button {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  width: 5rem;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+	width: 5rem;
 }
 
 .edit-brg .button .save {
-  border-radius: var(--border-radius-1);
-  padding: 0.8rem 1.5rem;
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  font-size: 1.1rem;
-  font-weight: 500;
+	border-radius: var(--border-radius-1);
+	padding: 0.8rem 1.5rem;
+	background-color: var(--color-primary);
+	color: var(--color-white);
+	font-size: 1.1rem;
+	font-weight: 500;
 }
 
 .edit-brg .button .save:hover {
-  background-color: #f1c100;
+	background-color: #f1c100;
 }
 
 .edit-brg .button .cancel {
-  border-radius: var(--border-radius-1);
-  padding: 0.8rem 1.5rem;
-  background-color: var(--color-dark);
-  color: var(--color-white);
-  font-size: 1.1rem;
-  font-weight: 500;
+	border-radius: var(--border-radius-1);
+	padding: 0.8rem 1.5rem;
+	background-color: var(--color-dark);
+	color: var(--color-white);
+	font-size: 1.1rem;
+	font-weight: 500;
 }
 
 .edit-brg .button .cancel:hover {
-  background-color: #474954;
+	background-color: #474954;
 }
-

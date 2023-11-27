@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2023 at 01:54 PM
+-- Generation Time: Nov 27, 2023 at 05:36 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -42,10 +42,10 @@ CREATE TABLE `tb_barang` (
 --
 
 INSERT INTO `tb_barang` (`id`, `nama_brg`, `keterangan`, `kategori`, `harga`, `stok`, `gambar`) VALUES
-(1, 'Beef Burger Chese', 'Enak Sedap Berkualitas', 'Junkfood', 25000, 6, 'burger.jpg'),
-(3, 'Formaggio Pizza', 'Pizza yang dilapisi saus tomat segar dengan taburan keju mozzarella yang meleleh, diberi sedikit daun basil segar dan memiliki rasa yang gurih, manis dan sedikit pedas.', 'Pizza', 60000, 9, 'pizza.jpg'),
-(5, 'Pulen Rice', 'Makanan pokok yang populer di berbagai belahan dunia, Nasi memiliki tekstur lembut dan rasa yang netral, membuatnya cocok sebagai pendamping berbagai hidangan.', 'Rice', 10000, 3, 'rice.jpg'),
-(7, 'Spicy Spaghetti', 'Hidangan pasta yang kenyal, disajikan dengan limpahan saus bolognese yang terbuat dari daging sapi cincang dengan rempah-rempah yang menghasilkan rasa gurih dan sedikit manis.', 'Mie', 30000, 6, 'spagetti.jpg');
+(1, 'Beef Burger Chese', 'Enak Sedap Berkualitas', 'junkfood', 25000, 6, 'burger.jpg'),
+(3, 'Formaggio Pizza', 'Pizza yang dilapisi saus tomat segar dengan taburan keju mozzarella yang meleleh, diberi sedikit daun basil segar dan memiliki rasa yang gurih, manis dan sedikit pedas.', 'pizza', 60000, 9, 'pizza.jpg'),
+(5, 'Pulen Rice', 'Makanan pokok yang populer di berbagai belahan dunia, Nasi memiliki tekstur lembut dan rasa yang netral, membuatnya cocok sebagai pendamping berbagai hidangan.', 'junkfood', 10000, 3, 'rice.jpg'),
+(7, 'Spicy Spaghetti', 'Hidangan pasta yang kenyal, disajikan dengan limpahan saus bolognese yang terbuat dari daging sapi cincang dengan rempah-rempah yang menghasilkan rasa gurih dan sedikit manis.', 'mie', 30000, 6, 'spagetti.jpg');
 
 -- --------------------------------------------------------
 
@@ -67,7 +67,10 @@ CREATE TABLE `tb_invoice` (
 
 INSERT INTO `tb_invoice` (`id`, `nama`, `alamat`, `tgl_pesan`, `batas_bayar`) VALUES
 (1, 'Fauzan', 'Garut', '2023-11-25 06:45:40', '2023-11-26 06:45:40'),
-(2, 'Utaaa', 'Tasik', '2023-11-25 06:48:25', '2023-11-26 06:48:25');
+(2, 'Utaaa', 'Tasik', '2023-11-25 06:48:25', '2023-11-26 06:48:25'),
+(3, 'Mitha', 'Garut', '2023-11-25 21:25:32', '2023-11-26 21:25:32'),
+(4, 'Akmal', 'Gobras', '2023-11-27 11:25:53', '2023-11-28 11:25:53'),
+(5, '', '', '2023-11-27 11:30:24', '2023-11-28 11:30:24');
 
 -- --------------------------------------------------------
 
@@ -91,7 +94,10 @@ CREATE TABLE `tb_pesanan` (
 
 INSERT INTO `tb_pesanan` (`id`, `id_invoice`, `id_brg`, `nama_brg`, `jumlah`, `harga`, `pilihan`) VALUES
 (1, 1, 1, 'Beef Burger Chese', 2, 25000, ''),
-(2, 2, 3, 'Formaggio Pizza', 2, 60000, '');
+(2, 2, 3, 'Formaggio Pizza', 2, 60000, ''),
+(3, 3, 3, 'Formaggio Pizza', 2, 60000, ''),
+(4, 3, 1, 'Beef Burger Chese', 1, 25000, ''),
+(5, 4, 7, 'Spicy Spaghetti', 1, 30000, '');
 
 --
 -- Indexes for dumped tables
@@ -129,13 +135,13 @@ ALTER TABLE `tb_barang`
 -- AUTO_INCREMENT for table `tb_invoice`
 --
 ALTER TABLE `tb_invoice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tb_pesanan`
 --
 ALTER TABLE `tb_pesanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

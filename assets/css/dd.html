@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        #quantity {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        #subtotal {
+            font-size: 18px;
+        }
+
+        button {
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <button id="minus">-</button>
+        <span id="quantity">1</span>
+        <button id="plus">+</button>
+    </div>
+
+    <p id="subtotal"></p>
+
+    <script>
+        var quantity = 1;
+        var harga = 10000;
+
+        document.getElementById('plus').addEventListener('click', function() {
+            quantity++;
+            updateQuantityAndTotal();
+        });
+
+        document.getElementById('minus').addEventListener('click', function() {
+            if (quantity > 1) {
+                quantity--;
+                updateQuantityAndTotal();
+            }
+        });
+
+        function updateQuantityAndTotal() {
+            var quantityElement = document.getElementById('quantity');
+            var totalHargaElement = document.getElementById('subtotal');
+            
+            // Menampilkan nilai quantity
+            quantityElement.textContent = quantity;
+
+            // Menghitung total harga
+            var totalHarga = quantity * harga;
+
+            // Menampilkan total harga dalam format mata uang Rupiah
+            totalHargaElement.textContent = 'Total: Rp ' + formatRupiah(totalHarga);
+        }
+
+        function formatRupiah(angka) {
+            var reverse = angka.toString().split('').reverse().join('');
+            var ribuan = reverse.match(/\d{1,3}/g);
+            var formatted = ribuan.join('.').split('').reverse().join('');
+            return formatted;
+        }
+    </script>
+</body>
+</html>

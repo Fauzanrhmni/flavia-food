@@ -67,7 +67,12 @@
               </div>
 
               <div class="input-group">
-                <input type="text" name="kategori" placeholder="Kategori">
+                <select name="kategori" class="select-menu">
+                  <option value="junkfood">Junkfood</option>
+                  <option value="pizza">Pizza</option>
+                  <option value="mie">Mie</option>
+                  <option value="drink">Drink</option>
+                </select>
               </div>
 
               <div class="input-group">

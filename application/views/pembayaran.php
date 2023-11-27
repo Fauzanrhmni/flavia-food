@@ -76,15 +76,15 @@
 						</div> -->
 
 						<div class="form-group">
-							<input type="text" placeholder="Nama Lengkap" name="nama"/>
+							<input type="text" placeholder="Nama Lengkap" name="nama" required/>
 						</div>
 
 						<div class="form-group">
-							<input type="text" placeholder="Alamat Lengkap" name="alamat"/>
+							<input type="text" placeholder="Alamat Lengkap" name="alamat" required/>
 						</div>
 
 						<div class="form-group">
-							<input type="text" placeholder="No.Telepon/Whatsapp" name="contact"/>
+							<input type="text" placeholder="No.Telepon/Whatsapp" name="contact" required/>
 						</div>
 
 						<div class="form-group">

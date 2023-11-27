@@ -18,7 +18,12 @@
       
       <div class="input">
         <label for="kategori">Kategori</label>
-        <input type="text" name="kategori" value="<?= $brg->kategori ?>" id="kategori">
+        <select name="kategori" id="kategori">
+          <option value="junkfood">Junkfood</option>
+          <option value="pizza">Pizza</option>
+          <option value="mie">Mie</option>
+          <option value="drink">Drink</option>
+        </select>
       </div>
       
       <div class="input">

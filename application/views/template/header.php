@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/cart.css" />
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/checkout.css" />
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/order.css" />
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/detail_product.css" />
 
 
     <!-- Material Icon -->

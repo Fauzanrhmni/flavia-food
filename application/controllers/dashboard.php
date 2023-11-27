@@ -23,8 +23,10 @@ class Dashboard extends CI_Controller {
 		$data = array(
 				'id' => $barang->id,
 				'qty' => 1,
+				// 'img' => $barang->gambar,
 				'price' => $barang->harga,
-				'name' => $barang->nama_brg
+				'name' => $barang->nama_brg,
+				'options' => array('img' => $barang->gambar)
 			);
 
 		$this->cart->insert($data);
@@ -66,6 +68,7 @@ class Dashboard extends CI_Controller {
 	{
 		$data['title'] = 'Flavia Food';
 		$data['title2'] = 'Transaction Status';
+		
 
 		$is_processed = $this->model_invoice->index();
 		if($is_processed) {
@@ -101,5 +104,20 @@ class Dashboard extends CI_Controller {
 		// 	$this->session->set_flashdata('message', '<div class="validation-failed">Masukkan Input Alamat Terlebih Dahulu!!</div>');
     //   redirect('dashboard/checkout');
 		// }
+	}
+
+	public function detail_product($id)
+	{
+		$data['title'] = 'Flavia Food';
+		$data['title2'] = 'Detail Product';
+		$data['biaya'] = 3000;
+
+		$data['barang'] = $this->model_brg->detail_brg($id);
+
+		$this->load->view('template/header', $data);
+		$this->load->view('template/sidebar', $data);
+		$this->load->view('template/topbar', $data);
+		$this->load->view('detail_product', $data);
+		$this->load->view('template/footer');
 	}
 }
