@@ -23,7 +23,6 @@ class Dashboard extends CI_Controller {
 		$data = array(
 				'id' => $barang->id,
 				'qty' => 1,
-				// 'img' => $barang->gambar,
 				'price' => $barang->harga,
 				'name' => $barang->nama_brg,
 				'options' => array('img' => $barang->gambar)
@@ -81,29 +80,6 @@ class Dashboard extends CI_Controller {
 		} else {
 			echo '<div class="validation-failed">Masukkan Input Alamat Terlebih Dahulu!!</div>';
 		}
-		
-		// $this->form_validation->set_rules('nama', 'Nama', 'required');
-    // $this->form_validation->set_rules('alamat', 'Alamat', 'required');
-    // $this->form_validation->set_rules('contact', 'Contact', 'required');
-    // $this->form_validation->set_rules('pembayaran', 'Pembayaran', 'required');
-
-		// if($this->form_validation->run() == false){
-		// 	$this->cart->destroy();
-		// 	$this->load->view('template/header', $data);
-		// 	$this->load->view('template/sidebar', $data);
-		// 	$this->load->view('template/topbar', $data);
-		// 	$this->load->view('ordered', $data);
-		// 	$this->load->view('template/footer');
-		// } else {
-		// 	$data = [
-    //     'nama' => $this->input->post('nama'),
-    //     'alamat' => $this->input->post('alamat'),
-    //     'contact' => $this->input->post('contact'),
-    //     'pembayaran' => $this->input->post('pembayaran')
-    //   ];
-		// 	$this->session->set_flashdata('message', '<div class="validation-failed">Masukkan Input Alamat Terlebih Dahulu!!</div>');
-    //   redirect('dashboard/checkout');
-		// }
 	}
 
 	public function detail_product($id)
