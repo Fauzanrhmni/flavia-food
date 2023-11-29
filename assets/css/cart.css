@@ -70,7 +70,6 @@
 }
 
 .keranjang .product-item img {
-	width: 8rem;
 	height: 8rem;
 	object-fit: cover;
 	margin-right: 1.5rem;
@@ -88,12 +87,18 @@
 	font-weight: 600;
 }
 
-.keranjang .product-item .title .product-title span {
+.keranjang .product-item .title .product-title a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.keranjang .product-item .title .product-title a span {
 	color: var(--yellow);
 	cursor: pointer;
 }
 
-.keranjang .product-item .title .product-title span:hover {
+.keranjang .product-item .title .product-title a span:hover {
 	color: var(--black);
 }
 

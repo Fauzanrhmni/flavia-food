@@ -15,11 +15,11 @@
 
   <?php foreach ($this->cart->contents() as $items) : ?>
   <div class="product-item">
-    <img src="<?= base_url(); ?>./upload/pizza.jpg">
+    <img src="<?= base_url('upload/' . $items['options']['img']); ?>">
     <div class="title">
       <div class="product-title">
         <h1><?= $items['name'] ?></h1>
-        <span class="material-symbols-outlined"> delete </span>
+        <a href="<?= base_url('dashboard/delete_item/' . $items['rowid']); ?>"><span class="material-symbols-outlined"> delete </span></a>
       </div>
       <div class="jumlah">
         <label>Jumlah</label>

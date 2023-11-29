@@ -1,0 +1,115 @@
+:root {
+	--yellow: #ffcc00;
+	--red: #cd0067;
+	--green: #88c23a;
+	--white: #fff;
+	--white-gray: #f0f0f0;
+	--gray: #cecece;
+	--black: #000;
+	--color-background: #f6f6f9;
+	--shadow: rgba(132, 139, 200, 0.18);
+	--box-shadow: 0 2rem 3rem var(--shadow);
+	--failed-validation: #ff7782;
+	--success-validation: #41f1b6;
+}
+
+.profile {
+	display: flex;
+	align-items: center;
+	margin-top: 2rem;
+	width: 74%;
+	margin-left: 22%;
+	margin-right: 4%;
+}
+
+.profile .myprofile {
+	display: grid;
+	grid-template-rows: repeat(2, max-content);
+	gap: 1.5rem;
+	background-color: var(--white);
+  border: 2px solid var(--gray);
+	width: 35rem;
+	padding: 2rem;
+	font-weight: 600;
+  border-radius: 1rem;
+}
+
+.profile .myprofile .title h1 {
+  font-size: 1.2rem;
+	color: var(--black);
+}
+
+.profile .myprofile .title h2 {
+  font-size: 0.8rem;
+	color: var(--black);
+  font-weight: 400;
+}
+
+.profile .myprofile .image-profile {
+  display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	width: 100%;
+}
+
+.profile .myprofile .image-profile img {
+  width: 3rem;
+	height: 3rem;
+}
+
+.profile .myprofile label {
+  font-size: 0.8rem;
+}
+
+.profile .myprofile .image-profile .profile-picture p {
+  font-size: 0.7rem;
+  color: var(--black);
+  font-weight: 400;
+}
+
+.profile .myprofile form {
+  display: grid;
+  grid-template-rows: repeat(2, max-content);
+  gap: 1.5rem;
+}
+
+.profile .myprofile .input-profile {
+  display: grid;
+	grid-template-rows: repeat(3, 1fr);
+	gap: 0.5rem;
+}
+
+.profile .myprofile .input-profile .inp-profile {
+  display: grid;
+	grid-template-rows: repeat(2, max-content);
+	gap: 0.5rem;
+	width: 100%;
+}
+
+.profile .myprofile .input-profile .inp-profile input {
+  font-family: "Poppins", sans-serif;
+  padding: 0.7rem 1rem;
+	border-radius: 0.5rem;
+	border: 2px solid var(--gray);
+	background: transparent;
+}
+
+.profile .myprofile .submit {
+  display: flex;
+	justify-content: end;
+	align-items: center;
+}
+
+.profile .myprofile .submit button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  padding: 0.3rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 0.8rem;
+}
+
+.profile .myprofile .submit button:hover {
+  background-color: #474954;
+}

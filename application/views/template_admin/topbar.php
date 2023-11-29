@@ -6,7 +6,6 @@
             <h1><?= $title; ?></h1>
 
             <div class="date">
-              <!-- <input type="date" /> -->
               <p><?php echo date("d-m-Y"); ?></p>
               <span class="material-symbols-outlined"> calendar_today </span>
             </div>
@@ -20,11 +19,11 @@
               <a href="profil.html">
                 <div class="profile">
                   <div class="info">
-                    <p><b>Fauzan Rahmani Ahdan</b></p>
+                    <p><b><?= $user['name']; ?></b></p>
                     <small class="text-muted"><?= $admin; ?></small>
                   </div>
                   <div class="profile-photo">
-                    <img src="SUe" />
+                    <img src="<?= base_url('assets/img/profile/') . $user['image']; ?>" />
                   </div>
                 </div>
               </a>

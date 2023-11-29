@@ -6,6 +6,8 @@ class Invoice extends CI_Controller {
 		$data['title'] = 'Invoice Pesanan';
     $data['admin'] = 'Admin';
     $data['invoice'] = $this->model_invoice->tampil_data();
+		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
 
 		$this->load->view('template_admin/header', $data);
 		$this->load->view('template_admin/sidebar', $data);
@@ -20,6 +22,8 @@ class Invoice extends CI_Controller {
     $data['admin'] = 'Admin';
 		$data['invoice'] = $this->model_invoice->ambil_id_invoice($id_invoice);
 		$data['pesanan'] = $this->model_invoice->ambil_id_pesanan($id_invoice);
+		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
 
 		$this->load->view('template_admin/header', $data);
 		$this->load->view('template_admin/sidebar', $data);

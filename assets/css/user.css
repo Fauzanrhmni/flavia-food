@@ -1,51 +1,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap");
 
 :root {
-  --yellow: #ffcc00;
-  --red: #cd0067;
-  --green: #88c23a;
-  --white: #fff;
-  --white-gray: #f0f0f0;
-  --gray: #cecece;
-  --black: #000;
-  --shadow: rgba(132, 139, 200, 0.18);
-  --box-shadow: 0 2rem 3rem var(--shadow);
-  --failed-validation: #ff7782;
+	--yellow: #ffcc00;
+	--red: #cd0067;
+	--green: #88c23a;
+	--white: #fff;
+	--white-gray: #f0f0f0;
+	--gray: #cecece;
+	--black: #000;
+	--color-background: #f6f6f9;
+	--shadow: rgba(132, 139, 200, 0.18);
+	--box-shadow: 0 2rem 3rem var(--shadow);
+	--failed-validation: #ff7782;
 	--success-validation: #41f1b6;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none;
-  border: none;
-  list-style-type: none;
-  text-decoration: none;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	border: none;
+	list-style-type: none;
+	text-decoration: none;
 }
 
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  background-color: var(--white);
-  color: var(--black);
+	font-family: "Poppins", sans-serif;
+	background-color: var(--white);
+	color: var(--black);
 }
 
 .validation-failed {
-  padding: 0.7rem 1rem;
-  background-color: var(--failed-validation);
-  color: var(--white);
-  border-radius: 0.6rem;
+	padding: 0.7rem 1rem;
+	background-color: var(--failed-validation);
+	color: var(--white);
+	border-radius: 0.6rem;
 }
 
 .validation-success {
-  padding: 0.7rem 1rem;
-  background-color: var(--success-validation);
-  color: var(--white);
-  border-radius: 0.6rem;
+	padding: 0.7rem 1rem;
+	background-color: var(--success-validation);
+	color: var(--white);
+	border-radius: 0.6rem;
 }
 
 /* Container
@@ -91,132 +92,125 @@ body {
 
 /* Sidebar Aside */
 .sidebar {
-  display: grid;
-  grid-template-rows: repeat(3, max-content);
-  height: 100vh;
-  width: 20.5%;
-  background-color: var(--white);
-  position: fixed;
-  z-index: 111;
-  left: 0;
-  top: 0;
-  padding: 0.5rem 4% 2%;
+	display: grid;
+	grid-template-rows: repeat(3, max-content);
+	height: 100vh;
+	width: 20.5%;
+	background-color: var(--white);
+	position: fixed;
+	z-index: 9999;
+	left: 0;
+	top: 0;
+	padding: 0.5rem 4% 2%;
 }
 
 .sidebar img {
-  /* height: 2.5rem; */
-  padding: 0.5rem 0;
-  display: flex;
-  align-items: center;
+	/* height: 2.5rem; */
+	padding: 0.5rem 0;
+	display: flex;
+	align-items: center;
 }
 
 .sidebar .filter {
-  display: grid;
-  /* grid-template-rows: auto; */
+	display: grid;
+	/* grid-template-rows: auto; */
 }
 
 .sidebar .filter h2 {
-  font-size: 1rem;
-  padding: 1rem 0;
-  margin-bottom: 0.5rem;
+	font-size: 1rem;
+	padding: 1rem 0;
+	margin-bottom: 0.5rem;
 }
 
 .sidebar .filter .kategori {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  gap: 1rem;
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+	gap: 1rem;
 }
 
 .sidebar .filter .kategori .checkbox {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
+	display: flex;
+	align-items: center;
+	margin-bottom: 0.5rem;
 }
 
 .sidebar .filter .kategori .checkbox a {
-  display: flex;
-  align-items: center;
-  margin-right: 0.3rem;
-  color: var(--black);
+	display: flex;
+	align-items: center;
+	margin-right: 0.3rem;
+	color: var(--black);
 }
 
 .sidebar .filter .kategori .checkbox a span {
-  margin-right: 0.5rem;
+	margin-right: 0.5rem;
 }
 
 .sidebar .filter .kategori .checkbox a:hover {
-  color: var(--yellow);
+	color: var(--yellow);
 }
 
 /* Navbar Nav */
 .navbar {
-  display: grid;
-  grid-template-columns: auto;
-  background-color: var(--white);
-  padding: 0.5rem 4% 0 22%;
-  position: fixed;
-  top: 0;
-  width: 100%;
+	display: grid;
+	grid-template-columns: auto;
+	background-color: var(--white);
+	padding: 0.5rem 4% 0 22%;
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	width: 100%;
 }
 
 .navbar a {
-  color: var(--white);
+	color: var(--white);
 }
 
 .navbar .navbar-nav {
-  display: grid;
-  grid-template-columns: auto max-content;
-  align-items: center;
+	display: grid;
+	grid-template-columns: auto max-content;
+	align-items: center;
 }
 
 .navbar .navbar-nav h1 {
-  padding: 0.5rem 0;
-  font-size: 1.7rem;
-  font-weight: 700;
+	padding: 0.5rem 0;
+	font-size: 1.7rem;
+	font-weight: 700;
 }
 
 .navbar .navbar-nav .profil {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.5rem 0;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding: 0.5rem 0;
 }
 
 .navbar .navbar-nav .profil .icon {
-  display: flex;
-  align-items: center;
-  position: relative;
-  color: var(--black);
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24;
-  cursor: pointer;
+	display: flex;
+	align-items: center;
+	position: relative;
+	color: var(--black);
+	font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+	cursor: pointer;
 }
 
 .navbar .navbar-nav .profil .icon:hover {
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24;
+	font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 
 .navbar .navbar-nav .profil .icon .numb {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: -0.5rem;
-  right: -0.3rem;
-  background-color: var(--red);
-  color: var(--white);
-  border: 2px solid var(--white);
-  height: 1.1rem;
-  width: 1.1rem;
-  font-size: 0.6rem;
-  border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: -0.5rem;
+	right: -0.3rem;
+	background-color: var(--red);
+	color: var(--white);
+	border: 2px solid var(--white);
+	height: 1.1rem;
+	width: 1.1rem;
+	font-size: 0.6rem;
+	border-radius: 50%;
 }
 
 /* .navbar .navbar-nav .profil a span {
@@ -229,188 +223,224 @@ body {
   color: var(--black);
 } */
 
-.navbar .navbar-nav .profil a img {
+
+/* Tambahkan sedikit gaya CSS untuk membuat dropdown terlihat lebih baik */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  border-radius: 1rem;
+}
+
+.dropdown .img img {
   height: 2rem;
+  width: 2rem;
   border-radius: 50%;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: -1rem;
+  background-color: var(--color-background);
+  min-width: 160px;
+  box-shadow: var(--box-shadow);
+  z-index: 1;
+  font-size: 0.8rem;
+  border-radius: 1rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.dropdown-content .link {
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+}
+
+.dropdown-content .link span {
+  transform: scale(0.8);
+}
+
+.dropdown-content .link:hover {
+  background-color: var(--white);
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 8px;
+  text-decoration: none;
+  display: block;
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /* Main Content */
 .hero {
-  display: grid;
-  grid-template-rows: repeat(3, max-content);
-  gap: 2rem;
-  width: 74%;
+	display: grid;
+	grid-template-rows: repeat(3, max-content);
+	gap: 2rem;
+	width: 74%;
 	margin-left: 22%;
 	margin-right: 4%;
 	margin-top: 6rem;
 }
 
 .hero .heading h1 {
-  font-size: 2rem;
-  font-weight: 600;
+	font-size: 2rem;
+	font-weight: 600;
 }
 
 .hero .heading h2 {
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: var(--black);
+	font-size: 1.2rem;
+	font-weight: 500;
+	color: var(--black);
 }
 
 .hero .search {
-  display: flex;
-  align-items: center;
-  width: 30rem;
-  padding: 0 0 0 1.5rem;
-  background-color: var(--white-gray);
-  border-radius: 5rem;
-  overflow: hidden;
+	display: flex;
+	align-items: center;
+	width: 30rem;
+	padding: 0 0 0 1.5rem;
+	background-color: var(--white-gray);
+	border-radius: 5rem;
+	overflow: hidden;
 }
 
 .hero .search img {
-  height: 1.5rem;
+	height: 1.5rem;
 }
 
 .hero .search input {
-  background: none;
-  width: 100%;
-  padding: 1rem;
-  font-family: "Poppins", sans-serif;
-  font-size: 0.9rem;
+	background: none;
+	width: 100%;
+	padding: 1rem;
+	font-family: "Poppins", sans-serif;
+	font-size: 0.9rem;
 }
 
 .hero .content {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1.5rem;
 }
 
 .hero .content .product {
-  padding: 1.5rem;
-  border: 2px solid var(--gray);
-  border-radius: 2rem;
-  color: var(--black);
+	padding: 1.5rem;
+	border: 2px solid var(--gray);
+	border-radius: 2rem;
+	color: var(--black);
 }
 
 .hero .content .product .img-product {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  position: relative;
-  height: 8rem;
-  margin-bottom: 1.5rem;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	position: relative;
+	height: 8rem;
+	margin-bottom: 1.5rem;
 }
 
 .hero .content .product .img-product img {
-  width: 100%;
+	width: 100%;
 }
 
 .hero .content .product .img-product #visibility {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  color: var(--yellow);
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+	color: var(--yellow);
 }
 
 .hero .content .product .img-product #visibility:hover {
-  color: #e1b400;
+	color: #e1b400;
 }
 
 .hero .content .product .product-name h2 {
-  font-size: 1rem;
-  font-weight: 500;
+	font-size: 1rem;
+	font-weight: 500;
 }
 
 .hero .content .product .rating {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.8rem;
-  width: 3rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 0.8rem;
+	width: 3rem;
 }
 
 .hero .content .product .rating span {
-  fill: var(--yellow);
-  transform: scale(0.6);
-  width: 0.9rem;
+	fill: var(--yellow);
+	transform: scale(0.6);
+	width: 0.9rem;
 }
 
 .hero .content .product .rating .value {
-  margin-left: 0.5rem;
+	margin-left: 0.5rem;
 }
 
 .hero .content .product .info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .hero .content .product .info .price {
-  display: block;
+	display: block;
 }
 
 .hero .content .product .info .price h3 {
-  font-size: 0.7rem;
-  color: var(--gray);
-  font-weight: 400;
+	font-size: 0.7rem;
+	color: var(--gray);
+	font-weight: 400;
 }
 
 .hero .content .product .info .price h2 {
-  font-size: 1.1rem;
-  color: var(--black);
-  font-weight: 500;
+	font-size: 1.1rem;
+	color: var(--black);
+	font-weight: 500;
 }
 
 .hero .content .product .info .tambah {
-  padding: 0.4rem 1.5rem;
-  font-size: 0.8rem;
-  background: var(--yellow);
-  border-radius: 0.5rem;
-  color: var(--white);
-  font-weight: 500;
-  font-family: "Poppins", sans-serif;
-  cursor: pointer;
+	padding: 0.4rem 1.5rem;
+	font-size: 0.8rem;
+	background: var(--yellow);
+	border-radius: 0.5rem;
+	color: var(--white);
+	font-weight: 500;
+	font-family: "Poppins", sans-serif;
+	cursor: pointer;
 }
 
 .hero .content .product .info .tambah:hover {
-  background-color: #e1b400;
+	background-color: #e1b400;
 }
 
 /* Footer */
 footer {
-  display: grid;
-  background-color: var(--white-gray);
-  grid-template-rows: max-content;
-  text-align: center;
-  /* width: 100%; */
-  /* background-color: var(--red); */
-  margin-left: 22%;
-  margin-top: 3rem;
-  padding: 1rem 0;
-}
-
-footer .socials {
-  padding: 1rem 0;
-}
-
-footer .socials a {
-  color: var(--white);
-  margin: 0.8rem;
-}
-
-footer .socials a:hover {
-  color: var(--yellow);
+	display: grid;
+	background-color: var(--white);
+	grid-template-rows: max-content;
+	text-align: center;
+	/* width: 100%; */
+	/* background-color: var(--red); */
+	margin-left: 22%;
+	margin-top: 3rem;
+	padding: 1rem 0;
 }
 
 footer .credit {
-  color: var(--black);
-  font-size: 0.8rem;
+	color: var(--black);
+	font-size: 0.8rem;
 }
 
 footer .credit a {
-  color: var(--black);
-  font-weight: 700;
+	color: var(--yellow);
+	font-weight: 700;
 }
 
 footer .credit a:hover {
-  color: var(--yellow);
+	color: var(--black);
 }

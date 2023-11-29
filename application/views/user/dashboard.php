@@ -3,7 +3,7 @@
     <!-- Main Start -->
     <main class="hero">
       <div class="heading">
-        <h1>Hi, Flavia</h1>
+        <h1>Hi, <?= $user['name']; ?></h1>
         <h2>Jelajahi Makanan dan Minuman Favorit Anda</h2>
       </div>
 
@@ -13,7 +13,7 @@
       </div>
 
       <div class="content">
-        <?php foreach ($drink as $brg) : ?>
+        <?php foreach ($barang as $brg) : ?>
         <div class="product">
           <div class="img-product">
             <img src="<?= base_url().'/upload/'.$brg->gambar ?>" class="img-button" />
@@ -39,7 +39,7 @@
               <h2>Rp. <?= number_format($brg->harga, 0,',','.') ?></h2>
             </div>
 
-            <?= anchor('kategori/addkeranjangdrink/'.$brg->id, '<button class="tambah">Tambah</button>')?>
+            <?= anchor('dashboard/addkeranjang/'.$brg->id, '<button class="tambah">Tambah</button>')?>
           </div>
         </div>
         <?php endforeach;?>

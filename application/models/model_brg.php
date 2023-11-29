@@ -38,14 +38,8 @@ class Model_brg extends CI_Model {
 		if($result->num_rows() > 0){
 			return $result->row();
 		} else {
-			return array();
+			return false; // Mengembalikan false jika data tidak ditemukan
 		}
-
-		return $this->db->select('id, nama_brg, keterangan, kategori, harga, stok, gambar')
-											 ->from('tb_barang')
-											 ->where('id', $id)
-											 ->get()
-											 ->row();
 	}
 
 	public function detail_brg($id)

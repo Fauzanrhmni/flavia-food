@@ -3,8 +3,8 @@
       <aside>
         <div class="top">
           <div class="logo">
-            <img src="<?= base_url('assets/'); ?>img/icon.svg" />
-            <h2>FLAVIA</h2>
+            <img src="<?= base_url('assets/'); ?>img/logo.svg" />
+            <!-- <h2>FLAVIA</h2> -->
           </div>
           <div class="close" id="close-btn">
             <span class="material-symbols-outlined"> close </span>
@@ -68,7 +68,7 @@
           <p>Select "Logout" below if you are ready to end your current session.</p>
           <div class="btn">
             <button class="cancel" type="button">Cancel</button>
-            <a class="logout" href="#">Logout</a>
+            <a class="logout" href="<?= base_url('auth/logout'); ?>">Logout</a>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 <body>
     <!-- Sidebar Start -->
     <aside class="sidebar">
-      <a href="#"><img src="<?= base_url() ?>assets/img/logo.svg" class="logo" /></a>
+      <a href="<?= base_url('dashboard') ?>"><img src="<?= base_url() ?>assets/img/logo.svg" class="logo" /></a>
       <div class="filter">
         <h2>Filter</h2>
         <h2>Kategori</h2>

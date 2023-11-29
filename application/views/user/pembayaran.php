@@ -1,10 +1,19 @@
 <!-- Checkout Style -->
 
 <div class="kembali">
-	<a href="<?= base_url('dashboard/detail_keranjang'); ?>" class="btn-kembali">
+	<!-- <a href="<?= base_url('dashboard/detail_keranjang'); ?>" class="btn-kembali"> -->
+	<button class="btn-kembali" id="btnKembali">
 		<span class="material-symbols-outlined"> arrow_back_ios </span>
 		<h3>Kembali</h3>
-	</a>
+	</button>
+
+	<script>
+    document.getElementById('btnKembali').addEventListener('click', function() {
+        // Menggunakan window.history untuk kembali ke halaman sebelumnya
+        window.history.back();
+    });
+	</script>
+
 </div>
 
 <div class="payment">

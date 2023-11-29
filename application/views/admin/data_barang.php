@@ -33,13 +33,13 @@
               <td><?= $brg->stok; ?></td>
               <td>
                 <div class="button">
-                  <a href="#" class="cta-success">
+                  <?= anchor('dashboard/detail_product/'.$brg->id, '<button class="cta-success">
                     <span class="material-symbols-outlined"> zoom_in </span>
-                  </a>
+                  </button>', array('target' => '_blank')) ?>
                   <?= anchor('admin/data_barang/edit/'. $brg->id, '<button class="cta-edit" >
                     <span class="material-symbols-outlined"> edit_square </span>
                   </button>'); ?>
-                  <?= anchor('admin/data_barang/delete/'. $brg->id, '<button href="#" class="cta-danger" >
+                  <?= anchor('admin/data_barang/delete/'. $brg->id, '<button class="cta-danger" >
                     <span class="material-symbols-outlined"> delete </span>
                   </button>'); ?>
                   
@@ -72,6 +72,7 @@
                   <option value="pizza">Pizza</option>
                   <option value="mie">Mie</option>
                   <option value="drink">Drink</option>
+                  <option value="icecream">Ice Cream</option>
                 </select>
               </div>
 

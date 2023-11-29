@@ -8,6 +8,8 @@ class Data_barang extends CI_Controller {
     $data['title'] = 'Data Barang';
     $data['admin'] = 'Admin';
     $data['barang'] = $this->model_brg->tampil_data()->result();
+		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
 
 		$this->load->view('template_admin/header', $data);
 		$this->load->view('template_admin/sidebar', $data);
@@ -57,6 +59,8 @@ class Data_barang extends CI_Controller {
     $data['admin'] = 'Admin';
     $where = array('id' => $id);
     $data['barang'] = $this->model_brg->edit_barang($where, 'tb_barang')->result();
+		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+    
 
     $this->load->view('template_admin/header', $data);
 		$this->load->view('template_admin/sidebar', $data);

@@ -43,7 +43,7 @@ html {
 }
 
 body {
-	width: 100vw;
+	width: 100%;
 	height: 100vh;
 	font-family: "Poppins", sans-serif;
 	font-size: 0.88rem;
@@ -144,12 +144,12 @@ aside .top {
 
 aside .logo {
 	display: flex;
-	gap: 0.8rem;
+	margin-left: 2rem;
 }
 
 aside .logo img {
-	width: 2rem;
-	height: 2rem;
+	width: 9rem;
+	/* height: 2rem; */
 }
 
 aside .close {
@@ -243,6 +243,7 @@ main .main-left .left .date {
 	border-radius: var(--border-radius-1);
 	margin-top: 1rem;
 	padding: 0.5rem 1.6rem;
+	width: 12rem;
 }
 
 main .main-left .left .date p {
@@ -322,6 +323,7 @@ main .main-left .right .top .profile:hover {
 .btn-top-table .add-new span {
 	transform: scale(0.7);
 }
+
 .btn-top-table .add-new:hover,
 .table .add-new-button:hover,
 .add-new-submenu:hover {
@@ -363,7 +365,7 @@ tr:nth-child(1):hover {
 
 table .button {
 	display: grid;
-	grid-template-columns: repeat(3, min-content);
+	grid-template-columns: repeat(3, 1fr);
 	gap: 1rem;
 }
 

@@ -13,7 +13,7 @@
       </div>
 
       <div class="content">
-        <?php foreach ($barang as $brg) : ?>
+        <?php foreach ($icecream as $brg) : ?>
         <div class="product">
           <div class="img-product">
             <img src="<?= base_url().'/upload/'.$brg->gambar ?>" class="img-button" />

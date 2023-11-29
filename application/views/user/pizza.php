@@ -39,7 +39,7 @@
               <h2>Rp. <?= number_format($brg->harga, 0,',','.') ?></h2>
             </div>
 
-            <?= anchor('kategori/addkeranjangpizza/'.$brg->id, '<button class="tambah">Tambah</button>')?>
+            <?= anchor('dashboard/addkeranjang/'.$brg->id, '<button class="tambah">Tambah</button>')?>
           </div>
         </div>
         <?php endforeach;?>

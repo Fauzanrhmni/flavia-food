@@ -20,7 +20,7 @@
               <td><?= $inv->batas_bayar ?></td>
               <td><?= anchor('admin/invoice/detail_invoice/'. $inv->id,
               '
-              <div class="button">
+              <div class="button" style="display: flex;">
                   <button class="cta-edit">
                     <span class="material-symbols-outlined"> visibility </span>
                   </button>

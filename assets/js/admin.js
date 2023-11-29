@@ -13,21 +13,21 @@ closeBtn.addEventListener("click", () => {
 });
 
 // Modal Box 
-// const itemDetailModal = document.querySelector('#item-detail-modal');
+const itemDetailModal = document.querySelector('#item-detail-modal');
 // const modalForm = document.querySelector('#modal-form');
 const modalSubmenu = document.querySelector('#modal-submenu');
 
-// const logoutBtn = document.querySelectorAll('.logout-button');
+const logoutBtn = document.querySelectorAll('.logout-button');
 // const addNewBtn = document.querySelectorAll('.add-new-button');
 const addNewSubMenu = document.querySelectorAll('.add-new');
 
 // Logout Button
-// logoutBtn.forEach((btn) => {
-//   btn.onclick = (e) => {
-//     itemDetailModal.style.display = 'flex';
-//     e.preventDefault();
-//   };
-// });
+logoutBtn.forEach((btn) => {
+  btn.onclick = (e) => {
+    itemDetailModal.style.display = 'flex';
+    e.preventDefault();
+  };
+});
 
 // Add New Menu Button
 // addNewBtn.forEach((btn) => {
@@ -46,15 +46,15 @@ addNewSubMenu.forEach((btn) => {
 });
 
 // Klik tombol close modal logout
-// document.querySelector('.modal .close-icon').onclick = (e) => {
-//   itemDetailModal.style.display = 'none';
-//   e.preventDefault();
-// }
+document.querySelector('.modal .close-icon').onclick = (e) => {
+  itemDetailModal.style.display = 'none';
+  e.preventDefault();
+}
 
-// document.querySelector('.modal .cancel').onclick = (e) => {
-//   itemDetailModal.style.display = 'none';
-//   e.preventDefault();
-// }
+document.querySelector('.modal .cancel').onclick = (e) => {
+  itemDetailModal.style.display = 'none';
+  e.preventDefault();
+}
 
 // Klik tombol close modal Menu
 // document.querySelector('.mod-form .close-icon-form').onclick = (e) => {
@@ -80,9 +80,9 @@ document.querySelector('.form-submenu .cancel-submenu').onclick = (e) => {
 
 // Klik di luar modal logout
 window.onclick = (e) => {
-  // if (e.target === itemDetailModal) {
-  //   itemDetailModal.style.display = 'none';
-  // }
+  if (e.target === itemDetailModal) {
+    itemDetailModal.style.display = 'none';
+  }
   // if (e.target === modalForm) {
   //   modalForm.style.display = 'none';
   // }
