@@ -16,7 +16,7 @@
               <button id="menu-btn">
                 <span class="material-symbols-outlined"> menu </span>
               </button>
-              <a href="profil.html">
+              <a href="<?= base_url('admin/myprofile'); ?>">
                 <div class="profile">
                   <div class="info">
                     <p><b><?= $user['name']; ?></b></p>

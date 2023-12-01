@@ -10,8 +10,8 @@
 	--black: #000;
 	--shadow: rgba(132, 139, 200, 0.18);
 	--box-shadow: 0 2rem 3rem var(--shadow);
-	--failed-validation: #ff7782;
-	--success-validation: #41f1b6;
+	--failed-validation: #f87171;
+	--success-validation: #4ade80;
 }
 
 * {
@@ -98,7 +98,7 @@ body {
 	color: var(--white);
 	border-radius: 0.5rem;
 	font-weight: 400;
-	font-size: 0.8rem;
+	font-size: 1rem;
 	text-align: justify;
 }
 
@@ -108,7 +108,7 @@ body {
 	color: var(--white);
 	border-radius: 0.5rem;
 	font-weight: 400;
-	font-size: 0.8rem;
+	font-size: 1rem;
 	text-align: justify;
 }
 

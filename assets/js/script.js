@@ -1,23 +1,28 @@
-// // Modal Box 
-// const itemDetailModal = document.querySelector('#item-detail-modal');
-// const imgButtons = document.querySelectorAll('.img-button');
+// Modal Box 
+const logoutModal = document.querySelector('#logout-modal');
+const logoutButtons = document.querySelectorAll('.logout-button');
 
-// imgButtons.forEach((btn) => {
-//   btn.onclick = (e) => {
-//     itemDetailModal.style.display = 'flex';
-//     e.preventDefault();
-//   };
-// });
+logoutButtons.forEach((btn) => {
+  btn.onclick = (e) => {
+    logoutModal.style.display = 'flex';
+    e.preventDefault();
+  };
+});
 
-// // Klik tombol close modal
-// document.querySelector('.modal .close-icon').onclick = (e) => {
-//   itemDetailModal.style.display = 'none';
-//   e.preventDefault();
-// }
+// Klik tombol close modal
+document.querySelector('.modal-logout-user .close-icon').onclick = (e) => {
+  logoutModal.style.display = 'none';
+  e.preventDefault();
+}
 
-// // Klik di luar modal
-// window.onclick = (e) => {
-//   if (e.target === itemDetailModal) {
-//     itemDetailModal.style.display = 'none';
-//   }
-// };
+document.querySelector('.modal-logout-user .cancel').onclick = (e) => {
+  logoutModal.style.display = 'none';
+  e.preventDefault();
+}
+
+// Klik di luar modal
+window.onclick = (e) => {
+  if (e.target === logoutModal) {
+    logoutModal.style.display = 'none';
+  }
+};

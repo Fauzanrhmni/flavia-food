@@ -14,33 +14,13 @@ closeBtn.addEventListener("click", () => {
 
 // Modal Box 
 const itemDetailModal = document.querySelector('#item-detail-modal');
-// const modalForm = document.querySelector('#modal-form');
-const modalSubmenu = document.querySelector('#modal-submenu');
 
 const logoutBtn = document.querySelectorAll('.logout-button');
-// const addNewBtn = document.querySelectorAll('.add-new-button');
-const addNewSubMenu = document.querySelectorAll('.add-new');
 
 // Logout Button
 logoutBtn.forEach((btn) => {
   btn.onclick = (e) => {
     itemDetailModal.style.display = 'flex';
-    e.preventDefault();
-  };
-});
-
-// Add New Menu Button
-// addNewBtn.forEach((btn) => {
-//   btn.onclick = (e) => {
-//     modalForm.style.display = 'flex';
-//     e.preventDefault();
-//   };
-// });
-
-// Add New Sub Menu Button
-addNewSubMenu.forEach((btn) => {
-  btn.onclick = (e) => {
-    modalSubmenu.style.display = 'flex';
     e.preventDefault();
   };
 });
@@ -55,17 +35,6 @@ document.querySelector('.modal .cancel').onclick = (e) => {
   itemDetailModal.style.display = 'none';
   e.preventDefault();
 }
-
-// Klik tombol close modal Menu
-// document.querySelector('.mod-form .close-icon-form').onclick = (e) => {
-//   modalForm.style.display = 'none';
-//   e.preventDefault();
-// }
-
-// document.querySelector('.mod-form .cancel').onclick = (e) => {
-//   modalForm.style.display = 'none';
-//   e.preventDefault();
-// }
 
 // Klik tombol close modal Add New Menu
 document.querySelector('.form-submenu .close-icon-submenu').onclick = (e) => {
@@ -82,12 +51,6 @@ document.querySelector('.form-submenu .cancel-submenu').onclick = (e) => {
 window.onclick = (e) => {
   if (e.target === itemDetailModal) {
     itemDetailModal.style.display = 'none';
-  }
-  // if (e.target === modalForm) {
-  //   modalForm.style.display = 'none';
-  // }
-  if (e.target === modalSubmenu) {
-    modalSubmenu.style.display = 'none';
   }
 };
 

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/barang.css" />
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/dashboard.css" />
     <link rel="stylesheet" href="<?= base_url(); ?>assets/css/edit.css" />
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/menu.css" />
 
     <!-- Material Icon -->
     <link
