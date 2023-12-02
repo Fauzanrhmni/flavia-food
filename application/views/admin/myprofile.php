@@ -1,5 +1,6 @@
 <!-- Profil Start -->
-<div class="main-bottom" style="margin-bottom: 11rem;">
+<div class="main-bottom">
+<?= $this->session->flashdata('message'); ?>
 <div class="profil">
   <div class="photo">
     <img src="<?= base_url('assets/img/profile/') . $user['image']; ?>" />

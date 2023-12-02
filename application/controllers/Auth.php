@@ -11,6 +11,15 @@ class Auth extends CI_Controller
 
   public function index()
   {
+    if ($this->session->userdata('email')) {
+      $role_id = $this->session->userdata('role_id');
+      if ($role_id == 1) {
+        redirect('admin/dashboard_admin');
+      } elseif ($role_id == 2) {
+        redirect('dashboard');
+      }
+    }
+
     $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
     $this->form_validation->set_rules('password', 'Password', 'trim|required');
     if ($this->form_validation->run() == false) {
@@ -64,6 +73,17 @@ class Auth extends CI_Controller
 
   public function registration()
   {
+    if ($this->session->userdata('email')) {
+      $role_id = $this->session->userdata('role_id');
+      if ($role_id == 1) {
+        redirect('admin/dashboard_admin');
+      } elseif ($role_id == 2) {
+        redirect('dashboard');
+      }
+    } else {
+      redirect('auth/blocked');
+    }
+
     $this->form_validation->set_rules('name', 'Nama', 'required|trim');
     $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
       'is_unique' => 'This email has already registered!'

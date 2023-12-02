@@ -2,17 +2,10 @@
 
     <!-- Main Start -->
     <div class="kembali">
-      <button class="btn-kembali" id="btnKembali">
+      <a href="<?= base_url('dashboard'); ?>" class="btn-kembali">
         <span class="material-symbols-outlined"> arrow_back_ios </span>
         <h3>Kembali</h3>
-      </button>
-
-      <script>
-        document.getElementById('btnKembali').addEventListener('click', function() {
-            // Menggunakan window.history untuk kembali ke halaman sebelumnya
-            window.history.back();
-        });
-      </script>
+      </a>
     </div>
     <main class="profile">
       <div class="myprofile">
@@ -21,8 +14,19 @@
           <h2>Manage your Flavia Profile</h2>
         </div>
 
+        <?= $this->session->flashdata('message'); ?>
+        
+        <?= form_open_multipart('dashboard/myprofile');?>
+        <!-- <form action="<?= base_url('dashboard/myprofile'); ?>" method="post" enctype="multipart/form-data"> -->
+        
         <div class="image-profile">
-          <img src="assseyt">
+          <div class="image-upload">
+            <label for="image">
+              <img src="<?= base_url('assets/img/profile/'). $user['image']; ?>">
+            </label>
+            <label for="image"><span class="material-symbols-outlined" id="edit_square"> edit_square </span>
+            </label>
+          </div>
           <div class="profile-picture">
             <label>Profile Picture</label>
             <p>PNG, JPG, max size of 1MB</p>
@@ -30,24 +34,30 @@
         </div>
         
         <label for="name">Member since <?= date('d F Y'); ?></label>
-        
-        <form action="" method="post">
-          <div class="input-profile">
 
-            <div class="inp-profile">
-              <label for="name">Fullname</label>
-              <input type="text" name="name" id="name" value="<?= $user['name']; ?>" placeholder="Fullname">
+        
+        <div class="input-profile">
+
+          <div class="inp-profile">
+            <label for="image">Edit Image</label>
+            <input type="file" name="image" id="image" value="">
+            </div>
+            
+            <div class="inp-profile" style="grid-template-rows: repeat(3, max-content);">
+              <label for="name">Full name</label>
+              <input type="text" name="name" id="name" value="<?= $user['name']; ?>">
+              <?= form_error('name', '<small style="color: var(--red); font-weight: 400;">', '</small>'); ?>
             </div>
       
             <div class="inp-profile">
               <label for="email">Email Address</label>
-              <input type="text" email="email" id="email" value="<?= $user['email']; ?>" placeholder="Email address">
+              <input type="text" name="email" id="email" value="<?= $user['email']; ?>" readonly style="background-color: var(--white-gray);">
             </div>
       
-            <div class="inp-profile">
+            <!-- <div class="inp-profile">
               <label for="email">Change Password</label>
-              <input type="text" email="email" id="email" placeholder="Change Password">
-            </div>
+              <input type="text" name="email" id="email" placeholder="Change Password">
+            </div> -->
           </div>
 
           <div class="submit">

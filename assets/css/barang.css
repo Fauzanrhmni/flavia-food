@@ -14,7 +14,7 @@
 	--color-dark-variant: #677483;
 	--color-background: #f6f6f9;
 	--failed-validation: #ff7782;
-	--success-validation: #41f1b6;
+	--success-validation: #4ade80;
 
 	--card-border-radius: 2rem;
 	--border-radius-1: 0.4rem;
@@ -227,6 +227,8 @@ aside .sidebar .message-count {
 
 /* Main Start */
 main {
+	display: grid;
+	grid-template-rows: max-content auto max-content;
 	margin-top: 1.4rem;
 }
 
@@ -283,43 +285,28 @@ main .main-left .right .top .profile:hover {
 .activation-success {
 	padding: 1rem;
 	background: var(--success-validation);
-	color: var(--white);
+	color: var(--color-white);
 	border-radius: 0.5rem;
-	font-weight: 400;
-	font-size: 0.8rem;
+	font-weight: 500;
+	font-size: 1rem;
 	text-align: justify;
+	margin-bottom: 1rem;
 }
 
 .activation-failed {
 	padding: 1rem;
 	background: var(--failed-validation);
-	color: var(--white);
+	color: var(--color-white);
 	border-radius: 0.5rem;
-	font-weight: 400;
-	font-size: 0.8rem;
+	font-weight: 500;
+	font-size: 1rem;
 	text-align: justify;
+	margin-bottom: 1rem;
 }
 
 .table {
 	margin-top: 3rem;
 	text-align: justify;
-}
-
-.table .activation {
-	width: 50%;
-	padding: 1rem;
-	background: #f87171;
-	color: white;
-	border-radius: 0.5rem;
-	font-weight: 400;
-	font-size: 1rem;
-	text-align: justify;
-	margin-bottom: 2rem;
-}
-
-.table .activation p {
-	color: white;
-	margin-bottom: 0.5rem;
 }
 
 .btn-top-table {
@@ -349,9 +336,16 @@ main .main-left .right .top .profile:hover {
 	background-color: #e1b400;
 }
 
-.table .table-menu,
 .table .table-submenu {
 	width: 100%;
+	margin-top: 2rem;
+	border-collapse: collapse;
+	font-size: 1rem;
+}
+
+.table .table-menu,
+.table .table-role {
+	width: 50%;
 	margin-top: 2rem;
 	border-collapse: collapse;
 	font-size: 1rem;
@@ -384,7 +378,7 @@ tr:nth-child(1):hover {
 
 table .button {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(3, max-content);
 	gap: 1rem;
 }
 
@@ -399,7 +393,7 @@ table .button .cta-success {
 	font-weight: 500;
 }
 
-table .button .cta-edit {
+table .button .cta-warning {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -425,7 +419,7 @@ table .button .cta-success:hover {
 	background-color: #7baf36;
 }
 
-table .button .cta-edit:hover {
+table .button .cta-warning:hover {
 	background-color: #e1b400;
 }
 
@@ -439,8 +433,8 @@ footer {
 	justify-content: center;
 	align-items: center;
 	padding: 2rem;
-	background-color: var(--color-white);
 	margin-top: 5rem;
+	background-color: var(--color-white);
 	border-radius: var(--border-radius-1);
 	box-shadow: var(--box-shadow);
 }
@@ -594,6 +588,11 @@ footer:hover {
 	.submenu-container input,
 	.submenu-container .input-group .select-menu {
 		width: 25rem;
+	}
+
+	.table .table-menu,
+	.table .table-role {
+		width: 100%;
 	}
 }
 

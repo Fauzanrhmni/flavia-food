@@ -1,16 +1,16 @@
 <div class="table">
-          <?= form_error('menu', '<div class="activation">','</div>'); ?>
+          <?= form_error('role', '<div class="activation-failed">','</div>'); ?>
 
           <?= $this->session->flashdata('message'); ?>
 
           <div class="btn-top-table">
-            <a href="#" class="add-new-role" >
+            <a href="#" class="add-new" >
               <span class="material-symbols-outlined"> add </span>
               Add Role
             </a>
           </div>
 
-          <table class="table-menu" style="width: 50%;">
+          <table class="table-role">
             <tr>
               <th>#</th>
               <th>Role</th>
@@ -23,12 +23,16 @@
               <td><?= $i++; ?></td>
               <td><?= $r['role']; ?></td>
               <td>
-                <div class="button" style="	display: flex; align-items: center; justify-content: space-between; width: 5rem;">
+                <div class="button">
+                  <a href="<?= base_url('admin/dashboard_admin/roleaccess/') . $r['id']?>" class="cta-warning">
+                    <span class="material-symbols-outlined"> key </span>
+                  </a>
+
                   <a class="cta-success">
                     <span class="material-symbols-outlined"> edit_square </span>
                   </a>
                   
-                  <a href="<?= base_url('menu/deletemenu/') . $r['id']?>" class="cta-danger">
+                  <a href="<?= base_url('admin/dashboard_admin/deleterole/') . $r['id']?>" class="cta-danger">
                     <span class="material-symbols-outlined"> delete </span>
                   </a>
                 </div>
@@ -176,9 +180,9 @@
         <div class="mod-form" id="modal-form">
           <div class="mod-container">
             <a href="#" class="close-icon-form"><span class="material-symbols-outlined">close</span></a>
-            <h5>Add New Menu</h5>
-            <form action="<?= base_url('menu'); ?>" method="post">
-              <input type="text" name="menu" id="menu" placeholder="Menu name">
+            <h5>Add New Role</h5>
+            <form action="<?= base_url('admin/dashboard_admin/role'); ?>" method="post">
+              <input type="text" name="role" id="role" placeholder="Role name">
               <div class="btn">
                 <button class="cancel" type="button">Cancel</button>
                 <button class="submit" type="submit">Add</button>
@@ -190,34 +194,26 @@
 
         <script>
           // Modal Box 
-          const itemDetailModal = document.querySelector('#modal-form');
-          const imgButtons = document.querySelectorAll('.add-new-role');
+          const modalRole = document.querySelector('#modal-form');
+          const imgButtons = document.querySelectorAll('.add-new');
 
           imgButtons.forEach((btn) => {
             btn.onclick = (e) => {
-              itemDetailModal.style.display = 'flex';
+              modalRole.style.display = 'flex';
               e.preventDefault();
             };
           });
 
           // Klik tombol close modal
           document.querySelector('.mod-form .close-icon-form').onclick = (e) => {
-            itemDetailModal.style.display = 'none';
+            modalRole.style.display = 'none';
             e.preventDefault();
           }
 
           document.querySelector('.mod-form .cancel').onclick = (e) => {
-            itemDetailModal.style.display = 'none';
+            modalRole.style.display = 'none';
             e.preventDefault();
           }
 
-          // Klik di luar modal
-          window.onclick = (e) => {
-            if (e.target === itemDetailModal) {
-              itemDetailModal.style.display = 'none';
-            }
-          };
-        </script>
 
-      </main>
-    </div>
+        </script>

@@ -1,4 +1,3 @@
-<!-- Profile Style -->
 <style>
       :root {
         --yellow: #ffcc00;
@@ -11,7 +10,7 @@
         --color-background: #f6f6f9;
         --shadow: rgba(132, 139, 200, 0.18);
         --failed-validation: #ff7782;
-        --success-validation: #41f1b6;
+        --success-validation: #4ade80;
         --box-shadow: 0 2rem 3rem var(--shadow);
       }
 
@@ -55,9 +54,26 @@
         width: 100%;
       }
 
-      .profile-admin .myprofile .image-profile img {
-        width: 3rem;
-        height: 3rem;
+      .profile-admin .myprofile .image-profile .image-upload {
+	      display: flex;
+	      position: relative;
+      }
+
+      .profile-admin .myprofile .image-profile .image-upload img {
+        width: 5rem;
+        height: 5rem;
+        background-repeat: no-repeat;
+	      object-fit: cover;
+      }
+
+      .profile-admin .myprofile .image-profile .image-upload #edit_square {
+      	position: absolute;
+      	top: 0;
+      	right: 0;
+      	color: var(--black);
+      	padding: 0.1rem;
+      	font-size: 1.3rem;
+      	cursor: pointer;
       }
 
       .profile-admin .myprofile label {
@@ -124,9 +140,17 @@
           <h1>Account Details</h1>
           <h2>Manage your Flavia Profile</h2>
         </div>
+        
+        <?= form_open_multipart('dashboard/myprofile');?>
 
         <div class="image-profile">
-          <img src="assseyt">
+          <div class="image-upload">
+            <label for="image">
+              <img src="<?= base_url('assets/img/profile/'). $user['image']; ?>">
+            </label>
+            <label for="image"><span class="material-symbols-outlined" id="edit_square"> edit_square </span>
+            </label>
+          </div>
           <div class="profile-picture">
             <label>Profile Picture</label>
             <p>PNG, JPG, max size of 1MB</p>
@@ -135,23 +159,28 @@
         
         <label for="name">Member since <?= date('d F Y'); ?></label>
         
-        <form action="" method="post">
-          <div class="input-profile">
+        <div class="input-profile">
+
+          <div class="inp-profile">
+            <label for="image">Edit Image</label>
+            <input type="file" name="image" id="image" value="">
+            </div>
+
+            <div class="inp-profile" style="grid-template-rows: repeat(3, max-content);">
+              <label for="name">Full name</label>
+              <input type="text" name="name" id="name" value="<?= $user['name']; ?>">
+              <?= form_error('name', '<small style="color: var(--red); font-weight: 400;">', '</small>'); ?>
+            </div>
 
             <div class="inp-profile">
-              <label for="name">Fullname</label>
-              <input type="text" name="name" id="name" value="<?= $user['name']; ?>" placeholder="Fullname">
-            </div>
-      
-            <div class="inp-profile">
               <label for="email">Email Address</label>
-              <input type="text" email="email" id="email" value="<?= $user['email']; ?>" placeholder="Email address">
+              <input type="text" name="email" id="email" value="<?= $user['email']; ?>" readonly style="background-color: var(--white-gray);">
             </div>
-      
-            <div class="inp-profile">
+
+            <!-- <div class="inp-profile">
               <label for="email">Change Password</label>
-              <input type="text" email="email" id="email" placeholder="Change Password">
-            </div>
+              <input type="text" name="email" id="email" placeholder="Change Password">
+            </div> -->
           </div>
 
           <div class="submit">

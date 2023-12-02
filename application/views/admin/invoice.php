@@ -21,7 +21,7 @@
               <td><?= anchor('admin/invoice/detail_invoice/'. $inv->id,
               '
               <div class="button" style="display: flex;">
-                  <button class="cta-edit">
+                  <button class="cta-warning">
                     <span class="material-symbols-outlined"> visibility </span>
                   </button>
                 </div>
@@ -34,5 +34,3 @@
           </table>
         </div>
         
-      </main>
-    </div>

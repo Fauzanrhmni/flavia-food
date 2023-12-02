@@ -12,47 +12,57 @@ closeBtn.addEventListener("click", () => {
   sideMenu.style.display = "none";
 });
 
-// Modal Box 
-const itemDetailModal = document.querySelector('#item-detail-modal');
+// // Modal Box 
+// const itemDetailModal = document.querySelector('#item-detail-modal');
 
-const logoutBtn = document.querySelectorAll('.logout-button');
+// const logoutBtn = document.querySelectorAll('.logout-button');
 
-// Logout Button
-logoutBtn.forEach((btn) => {
-  btn.onclick = (e) => {
-    itemDetailModal.style.display = 'flex';
-    e.preventDefault();
-  };
-});
+// // Logout Button
+// logoutBtn.forEach((btn) => {
+//   btn.onclick = (e) => {
+//     itemDetailModal.style.display = 'flex';
+//     e.preventDefault();
+//   };
+// });
 
-// Klik tombol close modal logout
-document.querySelector('.modal .close-icon').onclick = (e) => {
-  itemDetailModal.style.display = 'none';
-  e.preventDefault();
-}
+// // Klik tombol close modal logout
+// document.querySelector('.modal .close-icon').onclick = (e) => {
+//   itemDetailModal.style.display = 'none';
+//   e.preventDefault();
+// }
 
-document.querySelector('.modal .cancel').onclick = (e) => {
-  itemDetailModal.style.display = 'none';
-  e.preventDefault();
-}
+// document.querySelector('.modal .cancel').onclick = (e) => {
+//   itemDetailModal.style.display = 'none';
+//   e.preventDefault();
+// }
 
-// Klik tombol close modal Add New Menu
-document.querySelector('.form-submenu .close-icon-submenu').onclick = (e) => {
-  modalSubmenu.style.display = 'none';
-  e.preventDefault();
-}
+// // Klik tombol close modal Add New Menu
+// document.querySelector('.form-submenu .close-icon-submenu').onclick = (e) => {
+//   modalSubmenu.style.display = 'none';
+//   e.preventDefault();
+// }
 
-document.querySelector('.form-submenu .cancel-submenu').onclick = (e) => {
-  modalSubmenu.style.display = 'none';
-  e.preventDefault();
-}
+// document.querySelector('.form-submenu .cancel-submenu').onclick = (e) => {
+//   modalSubmenu.style.display = 'none';
+//   e.preventDefault();
+// }
 
-// Klik di luar modal logout
-window.onclick = (e) => {
-  if (e.target === itemDetailModal) {
-    itemDetailModal.style.display = 'none';
-  }
-};
+// window.onclick = (e) => {
+//   // Klik di luar modal logout
+//   if (e.target === itemDetailModal) {
+//     itemDetailModal.style.display = 'none';
+//   }
+
+//   // Klik di luar add modal sub menu
+//   else if (e.target === modalSubmenu) {
+//     modalSubmenu.style.display = "none";
+//   }
+// };
+
+
+
+
+
 
 // window.onclick = (e) => {
   //   if (e.target === itemDetailModal) {

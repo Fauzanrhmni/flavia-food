@@ -268,10 +268,5 @@
             e.preventDefault();
           }
           
-          // Klik di luar modal logout
-          window.onclick = (e) => {
-            if (e.target === modalSubmenu) {
-              modalSubmenu.style.display = 'none';
-            }
-          };
+
         </script>

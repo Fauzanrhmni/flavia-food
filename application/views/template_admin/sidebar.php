@@ -207,3 +207,37 @@
           </div>
         </div>
       </div>
+
+
+			<script>
+				// Modal Box 
+				const itemDetailModal = document.querySelector('#item-detail-modal');
+							
+				const logoutBtn = document.querySelectorAll('.logout-button');
+							
+				// Logout Button
+				logoutBtn.forEach((btn) => {
+				  btn.onclick = (e) => {
+				    itemDetailModal.style.display = 'flex';
+				    e.preventDefault();
+				  };
+				});
+				
+				// Klik tombol close modal logout
+				document.querySelector('.modal .close-icon').onclick = (e) => {
+				  itemDetailModal.style.display = 'none';
+				  e.preventDefault();
+				}
+				
+				document.querySelector('.modal .cancel').onclick = (e) => {
+				  itemDetailModal.style.display = 'none';
+				  e.preventDefault();
+				}
+				
+				window.onclick = (e) => {
+				  // Klik di luar modal logout
+				  if (e.target === itemDetailModal) {
+				    itemDetailModal.style.display = 'none';
+				  }
+				};
+			</script>

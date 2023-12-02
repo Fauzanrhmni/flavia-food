@@ -92,6 +92,8 @@ main .main-bottom .profil .photo img {
   width: 15rem;
   height: 15rem;
   border-radius: 50%;
+  background-repeat: no-repeat;
+  object-fit: cover;
 }
 
 main .main-bottom .profil .photo h1 {

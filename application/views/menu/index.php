@@ -10,7 +10,7 @@
             </a>
           </div>
 
-          <table class="table-menu" style="width: 50%;">
+          <table class="table-menu">
             <tr>
               <th>#</th>
               <th>Menu</th>
@@ -23,8 +23,8 @@
               <td><?= $i++; ?></td>
               <td><?= $m['menu']; ?></td>
               <td>
-                <div class="button" style="	display: flex; align-items: center; justify-content: space-between; width: 5rem;">
-                  <a class="cta-success">
+                <div class="button">
+                  <a class="cta-warning">
                     <span class="material-symbols-outlined"> edit_square </span>
                   </a>
                   
@@ -190,34 +190,26 @@
 
         <script>
           // Modal Box 
-          const itemDetailModal = document.querySelector('#modal-form');
+          const modalMenu = document.querySelector('#modal-form');
           const imgButtons = document.querySelectorAll('.add-new');
 
           imgButtons.forEach((btn) => {
             btn.onclick = (e) => {
-              itemDetailModal.style.display = 'flex';
+              modalMenu.style.display = 'flex';
               e.preventDefault();
             };
           });
 
           // Klik tombol close modal
           document.querySelector('.mod-form .close-icon-form').onclick = (e) => {
-            itemDetailModal.style.display = 'none';
+            modalMenu.style.display = 'none';
             e.preventDefault();
           }
 
           document.querySelector('.mod-form .cancel').onclick = (e) => {
-            itemDetailModal.style.display = 'none';
+            modalMenu.style.display = 'none';
             e.preventDefault();
           }
 
-          // Klik di luar modal
-          window.onclick = (e) => {
-            if (e.target === itemDetailModal) {
-              itemDetailModal.style.display = 'none';
-            }
-          };
-        </script>
 
-      </main>
-    </div>
+        </script>

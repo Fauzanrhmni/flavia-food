@@ -33,15 +33,17 @@
 			<td>
 				<div class="button">
 					<?= anchor('dashboard/detail_product/'.$brg->id, '<button
-						class="cta-success"
+						class="cta-warning"
 					>
 						<span class="material-symbols-outlined"> zoom_in </span></button
 					>', array('target' => '_blank')) ?>
+
 					<?= anchor('admin/data_barang/edit/'. $brg->id, '<button
-						class="cta-edit"
+						class="cta-success"
 					>
 						<span class="material-symbols-outlined"> edit_square </span></button
 					>'); ?>
+					
 					<?= anchor('admin/data_barang/delete/'. $brg->id, '<button
 						class="cta-danger"
 					>
@@ -239,33 +241,27 @@
 
 <script>
 	// Modal Box
-	const modalSubmenu = document.querySelector("#modal-submenu");
+	const modalBarang = document.querySelector("#modal-submenu");
 
-	const addNewSubMenu = document.querySelectorAll(".add-new");
+	const addNewBarang = document.querySelectorAll(".add-new");
 
 	// Add New Sub Menu Button
-	addNewSubMenu.forEach((btn) => {
+	addNewBarang.forEach((btn) => {
 		btn.onclick = (e) => {
-			modalSubmenu.style.display = "flex";
+			modalBarang.style.display = "flex";
 			e.preventDefault();
 		};
 	});
 
 	// Klik tombol close modal Add New Menu
 	document.querySelector(".form-addproduct .close-icon-submenu").onclick = (e) => {
-		modalSubmenu.style.display = "none";
+		modalBarang.style.display = "none";
 		e.preventDefault();
 	};
 
 	document.querySelector(".form-addproduct .cancel-submenu").onclick = (e) => {
-		modalSubmenu.style.display = "none";
+		modalBarang.style.display = "none";
 		e.preventDefault();
 	};
 
-	// Klik di luar modal logout
-	window.onclick = (e) => {
-		if (e.target === modalSubmenu) {
-			modalSubmenu.style.display = "none";
-		}
-	};
 </script>

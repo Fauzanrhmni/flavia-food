@@ -27,7 +27,7 @@ class Menu extends CI_Controller
       $this->load->view('template_admin/footer');
     } else {
       $this->db->insert('user_menu', ['menu' => $this->input->post('menu')]);
-      $this->session->set_flashdata('message', '<div class="activation" style="padding: 1rem; background: #4ade80; color: white; border-radius: 0.5rem; font-weight: 400; font-size: 1rem; text-align: justify;">New menu added!</div>');
+      $this->session->set_flashdata('message', '<div class="activation-success">New menu added!</div>');
       redirect('menu');
     }
   }
@@ -38,9 +38,9 @@ class Menu extends CI_Controller
     $this->db->delete('user_menu');
 
     if ($this->db->affected_rows() > 0) {
-      $this->session->set_flashdata('message', '<div class=".activation-success">Deleted Sub Menu!</div>');
+      $this->session->set_flashdata('message', '<div class="activation-success">Deleted Sub Menu!</div>');
     } else {
-      $this->session->set_flashdata('message', '<div class=".activation-failed">Failed Delete Submenu!</div>');
+      $this->session->set_flashdata('message', '<div class="activation-failed">Failed Delete Submenu!</div>');
     } 
     redirect('menu');
   }
