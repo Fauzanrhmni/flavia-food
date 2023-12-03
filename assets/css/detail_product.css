@@ -349,3 +349,7 @@
 	color: var(--white);
 	border-radius: 0.3rem;
 }
+
+.modal-order .order .like-buy .buy:hover {
+	background-color: #e1b400;
+}

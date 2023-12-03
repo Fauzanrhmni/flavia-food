@@ -333,13 +333,13 @@ body {
 	padding: 0.5rem 1rem;
 	font-size: 1rem;
 	border-radius: 0.5rem;
-	background-color: #ffcc00;
+	background-color: var(--yellow);
 	color: var(--white);
 	margin-left: 1rem;
 }
 
 .logout-container .btn .logout:hover {
-	background-color: #f0c000;
+	background-color: #e1b400;
 }
 
 /* Main Content */
