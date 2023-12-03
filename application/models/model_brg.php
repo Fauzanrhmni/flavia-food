@@ -23,6 +23,15 @@ class Model_brg extends CI_Model {
 		$this->db->where($where);
 		$this->db->update($table, $data);
 	}
+
+	public function barangByid($id) {
+    return $this->db->get_where('tb_barang', ['id'=>$id])->row_array();
+  }
+
+  public function updateBarang($id, $data) {
+    $this->db->where(['id'=>$id]);
+    $this->db->update('tb_barang', $data);
+  }
 	
 	public function deleted($where, $table)
 	{

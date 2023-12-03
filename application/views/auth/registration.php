@@ -44,7 +44,7 @@
 							<label class="label" for="password2">Repeat Password</label>
 						</div>
 					</div>
-					<a href="#" class="forgot">Forgot the password?</a>
+					<!-- <a href="<?= base_url('auth/forgotpassword'); ?>" class="forgot">Forgot the password?</a> -->
 
 					<button type="submit" class="submit">Register Account</button>
 

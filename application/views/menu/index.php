@@ -1,5 +1,5 @@
         <div class="table">
-          <?= form_error('menu', '<div class="activation">','</div>'); ?>
+          <?= form_error('menu', '<div class="activation-failed">','</div>'); ?>
 
           <?= $this->session->flashdata('message'); ?>
 
@@ -24,7 +24,7 @@
               <td><?= $m['menu']; ?></td>
               <td>
                 <div class="button">
-                  <a class="cta-warning">
+                  <a href="<?= base_url('menu/editmenu/') . $m['id']?>" class="cta-warning">
                     <span class="material-symbols-outlined"> edit_square </span>
                   </a>
                   

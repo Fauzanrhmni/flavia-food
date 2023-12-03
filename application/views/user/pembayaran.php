@@ -102,6 +102,7 @@
 								id="pembayaran"
 								onchange="tampilkanPilihan()"
 							>
+								<option>Select Pembayaran</option>
 								<option value="COD">COD</option>
 								<option value="DANA">DANA - XXXXXXXXXXXX</option>
 								<option value="OVO">OVO - XXXXXXXXXXXX</option>

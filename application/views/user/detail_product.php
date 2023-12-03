@@ -33,7 +33,7 @@
 							<span class="material-symbols-outlined"> location_on </span>
 							<label>Tasikmalaya</label>
 						</div>
-						<a href="#" class="cta">visit store</a>
+						<a href="https://www.google.com/maps/place/Universitas+Bina+Sarana+Informatika+Kampus+Tasikmalaya+(UBSI+Tasikmalaya)/@-7.3278977,108.219542,15.25z/data=!4m14!1m7!3m6!1s0x2e6f575ac796e5bd:0x1266496f1d655684!2sUniversitas+Bina+Sarana+Informatika+Kampus+Tasikmalaya+(UBSI+Tasikmalaya)!8m2!3d-7.3279553!4d108.2267338!16s%2Fg%2F1tfw0glp!3m5!1s0x2e6f575ac796e5bd:0x1266496f1d655684!8m2!3d-7.3279553!4d108.2267338!16s%2Fg%2F1tfw0glp?entry=ttu" target="_blank" class="cta">visit store</a>
 					</div>
 				</div>
 			</div>

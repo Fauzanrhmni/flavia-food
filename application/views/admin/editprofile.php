@@ -177,10 +177,6 @@
               <input type="text" name="email" id="email" value="<?= $user['email']; ?>" readonly style="background-color: var(--white-gray);">
             </div>
 
-            <!-- <div class="inp-profile">
-              <label for="email">Change Password</label>
-              <input type="text" name="email" id="email" placeholder="Change Password">
-            </div> -->
           </div>
 
           <div class="submit">

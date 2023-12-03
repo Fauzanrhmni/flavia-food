@@ -148,6 +148,10 @@ body {
 	color: var(--yellow);
 }
 
+.login-page .login .forgot:hover {
+	color: var();
+}
+
 .login-page .login .submit {
 	padding: 1rem;
 	color: var(--white);

@@ -175,4 +175,17 @@ class Dashboard extends CI_Controller
 			}
 		}
 	}
+
+	public function changePassword()
+	{
+		$data['title'] = 'Dashboard';
+		$data['admin'] = 'Admin';
+		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+		
+		$this->load->view('template_admin/header', $data);
+		$this->load->view('template_admin/sidebar', $data);
+		$this->load->view('template_admin/topbar', $data);
+		$this->load->view('admin/dashboard', $data);
+		$this->load->view('template_admin/footer');
+	}
 }

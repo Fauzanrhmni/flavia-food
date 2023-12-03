@@ -45,6 +45,36 @@ class Menu extends CI_Controller
     redirect('menu');
   }
 
+  public function editMenu($id) {
+    $data['title'] = 'Menu';
+    $data['admin'] = 'Admin';
+    $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+    $this->load->model('Menu_model', 'menu');
+
+    // $data['menu'] = $this->db->get('user_menu')->result_array();
+    $data['menu'] = $this->menu->menuByid($id);
+
+    $this->form_validation->set_rules('menu', 'Menu', 'required');
+
+
+    if($this->form_validation->run() == false){
+      $this->load->view('template_admin/header', $data);
+      $this->load->view('template_admin/sidebar', $data);
+      $this->load->view('template_admin/topbar', $data);
+      $this->load->view('menu/editmenu', $data);
+      $this->load->view('template_admin/footer');
+    } else {
+      $id = $this->input->post('id');
+      $data = [
+        'menu' => $this->input->post('menu')
+      ];
+
+      $this->menu->updateMenu($id, $data);
+      $this->session->set_flashdata('message', '<div class="activation-success">Successfully edited the menu!</div>');
+      redirect('menu');
+    }
+  }
+
   public function subMenu() {
     $data['title'] = 'Sub Menu';
     $data['admin'] = 'Admin';
@@ -74,7 +104,7 @@ class Menu extends CI_Controller
         'is_active' => $this->input->post('is_active')
       ];
       $this->db->insert('user_sub_menu', $data);
-      $this->session->set_flashdata('message', '<div class="activation" style="padding: 1rem; background: #4ade80; color: white; border-radius: 0.5rem; font-weight: 400; font-size: 1rem; text-align: justify;">New sub menu added!</div>');
+      $this->session->set_flashdata('message', '<div class="activation-success">New sub menu added!</div>');
       redirect('menu/submenu');
     }
   }
@@ -85,9 +115,9 @@ class Menu extends CI_Controller
     $this->db->delete('user_sub_menu');
 
     if ($this->db->affected_rows() > 0) {
-      $this->session->set_flashdata('message', '<div class="activation" style="padding: 1rem; background: #4ade80; color: white; border-radius: 0.5rem; font-weight: 400; font-size: 1rem; text-align: justify;">Deleted Sub Menu!</div>');
+      $this->session->set_flashdata('message', '<div class="activation-success">Deleted Sub Menu!</div>');
     } else {
-      $this->session->set_flashdata('message', '<div class="activation" style="padding: 1rem; background: #f87171; color: white; border-radius: 0.5rem; font-weight: 400; font-size: 1rem; text-align: justify;">Failed Delete Submenu!</div>');
+      $this->session->set_flashdata('message', '<div class="activation-failed">Failed Delete Submenu!</div>');
     } 
     redirect('menu/submenu');
   }
@@ -96,10 +126,10 @@ class Menu extends CI_Controller
     $data['title'] = 'Edit Submenu';
     $data['admin'] = 'Admin';
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-    $this->load->model('Menu_model', 'menu');
+    $this->load->model('Menu_model', 'submenu');
 
     $data['menu'] = $this->db->get('user_menu')->result_array();
-    $data['submenu'] = $this->menu->getByid($id);
+    $data['submenu'] = $this->submenu->getByid($id);
 
     $this->form_validation->set_rules('title', 'Title', 'required');
     $this->form_validation->set_rules('menu_id', 'Menu', 'required');
@@ -122,8 +152,8 @@ class Menu extends CI_Controller
         'is_active' => $this->input->post('is_active')
       ];
 
-      $this->menu->updateSubmenu($id, $data);
-      $this->session->set_flashdata('message', '<div class="activation" style="padding: 1rem; background: #4ade80; color: white; border-radius: 0.5rem; font-weight: 400; font-size: 1rem; text-align: justify;">Successfully edited the submenu!</div>');
+      $this->submenu->updateSubmenu($id, $data);
+      $this->session->set_flashdata('message', '<div class="activation-success">Successfully edited the submenu!</div>');
       redirect('menu/submenu');
     }
   }

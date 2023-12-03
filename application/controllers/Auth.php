@@ -80,8 +80,6 @@ class Auth extends CI_Controller
       } elseif ($role_id == 2) {
         redirect('dashboard');
       }
-    } else {
-      redirect('auth/blocked');
     }
 
     $this->form_validation->set_rules('name', 'Nama', 'required|trim');
@@ -111,7 +109,7 @@ class Auth extends CI_Controller
       ];
 
       $this->db->insert('user', $data);
-      $this->session->set_flashdata('message', '<div class="activation-success" >Congratulation your account has been created. Please Login</div>');
+      $this->session->set_flashdata('message', '<div class="activation-success">Congratulation your account has been created. Please Login</div>');
       redirect('auth');
     }
   }
@@ -131,4 +129,37 @@ class Auth extends CI_Controller
 
     $this->load->view('auth/blocked', $data);
   }
+
+  // public function forgotpassword()
+  // {
+  //   $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
+    
+  //   if ($this->form_validation->run() == false) {
+  //     $data['title'] = 'Forgot Password';
+  //     $this->load->view('template_auth/auth_header', $data);
+  //     $this->load->view('auth/forgot-password');
+  //     $this->load->view('template_auth/auth_footer');
+  //   } else {
+  //     $email = $this->input->post('email');
+  //     $this->db->get_where('user', ['email' => $email])->row_array();
+
+  //     if ($user) {
+  //       $token = base64_encode(random_bytes(32));
+  //       $user_token = [
+  //         'email' => $email,
+  //         'token' => $token,
+  //         'date_created' => time()
+  //       ];
+
+  //       $this->db->insert('user_token', $user_token);
+  //       $this->_sendEmail($token, 'forgot');
+
+  //       $this->session->set_flashdata('message', '<div class="activation-failed">Email is not registered!</div>');
+  //       redirect('auth/forgotpassword');
+  //     } else {
+  //       $this->session->set_flashdata('message', '<div class="activation-failed">Email is not registered!</div>');
+  //       redirect('auth/forgotpassword');
+  //     }
+  //   }
+  // }
 }

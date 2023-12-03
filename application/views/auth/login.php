@@ -31,7 +31,7 @@
 						<label class="label" for="password">Password</label>
 						<?= form_error('password', '<small>', '</small>'); ?>
 					</div>
-					<a href="#" class="forgot">Forgot the password?</a>
+					<!-- <a href="<?= base_url('auth/forgotpassword'); ?>" class="forgot">Forgot the password?</a> -->
 
 					<button type="submit" class="submit">Login</button>
 

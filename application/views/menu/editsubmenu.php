@@ -31,7 +31,7 @@
     <div class="input">
       <label for="menu_id">Menu Id</label>
       <select name="menu_id" id="menu_id">
-        <option value="junkfood">Select Menu</option>
+        <option>Select Menu</option>
         <?php foreach ($menu as $m) : ?>
         <option value="<?= $m['id'] ?>" <?= ($m['id'] == $submenu['menu_id']) ? 'selected' : '' ?>><?= $m['menu'] ?></option>
         <?php endforeach; ?>

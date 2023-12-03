@@ -1,6 +1,7 @@
 <!-- Barang Style -->
 
 <div class="table">
+	<?= $this->session->flashdata('message'); ?>
 	<div class="btn-top-table">
 		<a href="#" class="add-new">
 			<span class="material-symbols-outlined"> add </span>
@@ -38,7 +39,7 @@
 						<span class="material-symbols-outlined"> zoom_in </span></button
 					>', array('target' => '_blank')) ?>
 
-					<?= anchor('admin/data_barang/edit/'. $brg->id, '<button
+					<?= anchor('admin/data_barang/editbarang/'. $brg->id, '<button
 						class="cta-success"
 					>
 						<span class="material-symbols-outlined"> edit_square </span></button

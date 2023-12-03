@@ -28,7 +28,7 @@
                     <span class="material-symbols-outlined"> key </span>
                   </a>
 
-                  <a class="cta-success">
+                  <a href="<?= base_url('admin/dashboard_admin/editrole/') . $r['id']?>" class="cta-success">
                     <span class="material-symbols-outlined"> edit_square </span>
                   </a>
                   

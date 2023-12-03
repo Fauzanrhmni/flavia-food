@@ -7,12 +7,14 @@ class Model_invoice extends CI_Model {
     date_default_timezone_set('Asia/Jakarta');
     $nama = $this->input->post('nama');
     $alamat = $this->input->post('alamat');
+    $notes = $this->input->post('notes');
     // $contact = $this->input->post('contact');
     // $pembayaran = $this->input->post('pembayaran');
 
     $invoice = array(
       'nama' => $nama,
       'alamat' => $alamat,
+      'notes' => $notes,
       'tgl_pesan' => date('Y-m-d H:i:s'),
       'batas_bayar' => date('Y-m-d H:i:s', mktime(date('H'), date('i'), date('s'), date('m'), date('d') + 1, date('Y')))
     );
@@ -63,4 +65,10 @@ class Model_invoice extends CI_Model {
       return false;
     }
   }
+
+  public function deleted($where, $table)
+	{
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
 }

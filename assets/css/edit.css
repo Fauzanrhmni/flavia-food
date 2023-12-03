@@ -26,30 +26,45 @@
 .edit-brg {
 	margin-top: 1.5rem;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	justify-content: start;
+	align-items: start;
 	padding: 1.5rem 0;
+	border-radius: var(--border-radius-2);
+}
+
+.change-password {
+	margin-top: 1.5rem;
 	border-radius: var(--border-radius-2);
 }
 
 .edit-brg form {
 	display: grid;
-	grid-template-rows: repeat(5, 1fr);
-	width: 100%;
+	grid-template-rows: repeat(5, max-content);
+	width: 50%;
 	gap: 1rem;
 }
 
-.edit-brg .input {
+.change-password form {
+	display: grid;
+	grid-template-rows: repeat(4, max-content);
+	width: 50%;
+	gap: 1rem;
+}
+
+.edit-brg .input,
+.change-password .input {
 	display: grid;
 	gap: 0.5rem;
 }
 
-.edit-brg .input label {
+.edit-brg .input label,
+.change-password .input label {
 	font-size: 1.1rem;
 }
 
 .edit-brg .input input,
-.edit-brg .input select {
+.edit-brg .input select,
+.change-password .input input {
 	width: 100%;
 	border: 2px solid var(--color-info-light);
 	border-radius: var(--border-radius-1);
@@ -58,14 +73,16 @@
 	font-weight: 400;
 }
 
-.edit-brg .button {
+.edit-brg .button,
+.change-password .button {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 1rem;
 	width: 5rem;
 }
 
-.edit-brg .button .save {
+.edit-brg .button .save,
+.change-password .button .save {
 	border-radius: var(--border-radius-1);
 	padding: 0.8rem 1.5rem;
 	background-color: var(--color-primary);
@@ -74,11 +91,13 @@
 	font-weight: 500;
 }
 
-.edit-brg .button .save:hover {
+.edit-brg .button .save:hover,
+.change-password .button .save:hover {
 	background-color: #f1c100;
 }
 
-.edit-brg .button .cancel {
+.edit-brg .button .cancel,
+.change-password .button .cancel {
 	border-radius: var(--border-radius-1);
 	padding: 0.8rem 1.5rem;
 	background-color: var(--color-dark);
@@ -87,6 +106,7 @@
 	font-weight: 500;
 }
 
-.edit-brg .button .cancel:hover {
+.edit-brg .button .cancel:hover,
+.change-password .button .cancel:hover {
 	background-color: #474954;
 }

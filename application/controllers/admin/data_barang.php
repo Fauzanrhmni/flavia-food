@@ -16,7 +16,6 @@ class Data_barang extends CI_Controller
     $data['barang'] = $this->model_brg->tampil_data()->result();
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
-
 		$this->load->view('template_admin/header', $data);
 		$this->load->view('template_admin/sidebar', $data);
 		$this->load->view('template_admin/topbar', $data);
@@ -56,54 +55,54 @@ class Data_barang extends CI_Controller
     );
 
     $this->model_brg->tambah_barang($data, 'tb_barang');
+    $this->session->set_flashdata('message', '<div class="activation-success">New items have been added!</div>');
     redirect('admin/data_barang/');
   }
 
-  public function edit($id) 
-  {
-    $data['title'] = 'Edit Barang';
+
+  public function editBarang($id) {
+    $data['title'] = 'Role';
     $data['admin'] = 'Admin';
-    $where = array('id' => $id);
-    $data['barang'] = $this->model_brg->edit_barang($where, 'tb_barang')->result();
-		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-    
+    $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+    $this->load->model('Model_brg', 'barang');
 
-    $this->load->view('template_admin/header', $data);
-		$this->load->view('template_admin/sidebar', $data);
-		$this->load->view('template_admin/topbar', $data);
-		$this->load->view('admin/edit_barang', $data);
-		$this->load->view('template_admin/footer');
-  }
+    $data['barang'] = $this->barang->barangByid($id);
+    $data['tb_barang'] = $this->db->get('tb_barang')->result_array();
 
-  public function update()
-  {
-    $id = $this->input->post('id');
-    $nama_brg = $this->input->post('nama_brg');
-    $keterangan = $this->input->post('keterangan');
-    $kategori = $this->input->post('kategori');
-    $harga = $this->input->post('harga');
-    $stok = $this->input->post('stok');
+		$this->form_validation->set_rules('nama_brg', 'Nama Barang', 'required');
+		$this->form_validation->set_rules('keterangan', 'Keterangan', 'required');
+		$this->form_validation->set_rules('kategori', 'Kategori', 'required');
+		$this->form_validation->set_rules('harga', 'Harga', 'required');
+		$this->form_validation->set_rules('stok', 'Stok', 'required');
 
-    $data = array(
-      'nama_brg' => $nama_brg,
-      'keterangan' => $keterangan,
-      'kategori' => $kategori,
-      'harga' => $harga,
-      'stok' => $stok
-    );
 
-    $where = array(
-      'id' => $id
-    );
+    if($this->form_validation->run() == false){
+      $this->load->view('template_admin/header', $data);
+      $this->load->view('template_admin/sidebar', $data);
+      $this->load->view('template_admin/topbar', $data);
+      $this->load->view('admin/edit_barang', $data);
+      $this->load->view('template_admin/footer');
+    } else {
+      $id = $this->input->post('id');
+      $data = [
+        'nama_brg' => $this->input->post('nama_brg'),
+        'keterangan' => $this->input->post('keterangan'),
+        'kategori' => $this->input->post('kategori'),
+        'harga' => $this->input->post('harga'),
+        'stok' => $this->input->post('stok'),
+      ];
 
-    $this->model_brg->update_data($where, $data, 'tb_barang');
-    redirect('admin/data_barang');
+      $this->barang->updateBarang($id, $data);
+      $this->session->set_flashdata('message', '<div class="activation-success">The item has been successfully edited!</div>');
+      redirect('admin/data_barang');
+    }
   }
   
   public function delete($id)
   {
     $where = array('id' => $id);
     $this->model_brg->deleted($where, 'tb_barang');
+    $this->session->set_flashdata('message', '<div class="activation-success">Deleted Item!</div>');
     redirect('admin/data_barang');
   }
 }

@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choose File by Clicking Image</title>
-    <style>
-        /* Styling for demonstration purposes */
-        #fileInput {
-            display: none; /* Hide the file input */
-        }
-        #fileLabel {
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .password-container {
+      position: relative;
+    }
+
+    .password-input {
+      padding-right: 30px; /* Mengatur ruang agar ikon pasword memiliki tempat */
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <label id="fileLabel" for="fileInput">
-        <img src="path/to/your/image.jpg" alt="Choose File">
-    </label>
-    <input type="file" id="fileInput" name="fileInput">
 
-    <!-- Add any additional HTML or JavaScript as needed -->
+<div class="password-container">
+  <input type="password" id="myPassword" class="password-input" placeholder="Password">
+  <span class="toggle-password" onclick="togglePasswordVisibility()">
+    👁️
+  </span>
+</div>
+
+<script>
+  function togglePasswordVisibility() {
+    var passwordInput = document.getElementById("myPassword");
+    var toggleIcon = document.querySelector(".toggle-password");
+
+    if (passwordInput.type === "password") {
+      passwordInput.type = "text";
+      toggleIcon.textContent = "👁️";
+    } else {
+      passwordInput.type = "password";
+      toggleIcon.textContent = "👁️";
+    }
+  }
+</script>
 
 </body>
 </html>
