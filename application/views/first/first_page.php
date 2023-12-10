@@ -25,7 +25,7 @@
 	<body>
 		<!-- Sidebar Start -->
 		<aside class="sidebar">
-			<a href="<?= base_url('first') ?>"
+			<a href="<?= base_url('first') ?>" target="_blank"
 				><img src="<?= base_url() ?>assets/img/logo.svg" class="logo"
 			/></a>
 			<div class="filter">
@@ -34,35 +34,35 @@
 
 				<div class="kategori">
 					<div class="checkbox">
-						<a href="<?= base_url('first/start') ?>">
+						<a href="<?= base_url('first/start') ?>" target="_blank">
 							<span class="material-symbols-outlined"> fastfood </span>
 							Junkfood
 						</a>
 					</div>
 
 					<div class="checkbox">
-						<a href="<?= base_url('first/start') ?>">
+						<a href="<?= base_url('first/start') ?>" target="_blank">
 							<span class="material-symbols-outlined"> local_pizza </span>
 							Pizza
 						</a>
 					</div>
 
 					<div class="checkbox">
-						<a href="<?= base_url('first/start') ?>">
+						<a href="<?= base_url('first/start') ?>" target="_blank">
 							<span class="material-symbols-outlined"> ramen_dining </span>
 							Mie
 						</a>
 					</div>
 
 					<div class="checkbox">
-						<a href="<?= base_url('first/start') ?>">
+						<a href="<?= base_url('first/start') ?>" target="_blank">
 							<span class="material-symbols-outlined"> local_cafe </span>
 							Drink
 						</a>
 					</div>
 
 					<div class="checkbox">
-						<a href="<?= base_url('first/start') ?>">
+						<a href="<?= base_url('first/start') ?>" target="_blank">
 							<span class="material-symbols-outlined"> mode_cool </span>
 							Ice Cream
 						</a>
@@ -79,6 +79,10 @@
 				<div class="profil">
 
 					<style>
+						.hero .image-hero img {
+							width: 100%;
+							border-radius: 2rem;
+						}
 						.login-signup {
 							display: flex;
 							align-items: center;
@@ -117,8 +121,8 @@
 						}
 					</style>
 					<div class="login-signup">
-						<?= anchor('first/start', '<button class="signup">Sign Up</button>') ?>
-						<?= anchor('first/start', '<button class="login">Log In</button>') ?>
+						<?= anchor('first/start', '<button class="signup">Sign Up</button>',  array('target' => '_blank')) ?>
+						<?= anchor('first/start', '<button class="login">Log In</button>',  array('target' => '_blank')) ?>
 					</div>
 				</div>
 			</div>
@@ -127,6 +131,10 @@
 
 		<!-- Main Start -->
 		<main class="hero">
+
+			<div class="image-hero">
+				<img src="<?= base_url('assets/'); ?>img/poster.png">
+			</div>
 			<div class="search">
 				<span class="material-symbols-outlined"> search </span>
 				<input type="search" name="search" id="search" placeholder="Search.." />
@@ -174,7 +182,7 @@
 							class="tambah"
 						>
 							Tambah</button
-						>')?>
+						>', array('target' => '_blank'))?>
 					</div>
 				</div>
 				<?php endforeach;?>

@@ -20,7 +20,7 @@
 
 					<button type="submit" class="submit">Reset Password</button>
 
-					<p>Back to log in?<a href="<?= base_url('auth/registration'); ?>" class="cta">Log In</a></p>
+					<p>Back to log in?<a href="<?= base_url('auth'); ?>" class="cta">Log In</a></p>
 				</div>
 			</div>
 			</form>

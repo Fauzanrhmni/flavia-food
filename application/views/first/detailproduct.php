@@ -36,35 +36,35 @@
 
 				<div class="kategori">
 					<div class="checkbox">
-						<a href="<?= base_url('first/start') ?>">
+						<a href="<?= base_url('first/start') ?>" target="_blank">
 							<span class="material-symbols-outlined"> fastfood </span>
 							Junkfood
 						</a>
 					</div>
 
 					<div class="checkbox">
-						<a href="<?= base_url('first/start') ?>">
+						<a href="<?= base_url('first/start') ?>" target="_blank">
 							<span class="material-symbols-outlined"> local_pizza </span>
 							Pizza
 						</a>
 					</div>
 
 					<div class="checkbox">
-						<a href="<?= base_url('first/start') ?>">
+						<a href="<?= base_url('first/start') ?>" target="_blank">
 							<span class="material-symbols-outlined"> ramen_dining </span>
 							Mie
 						</a>
 					</div>
 
 					<div class="checkbox">
-						<a href="<?= base_url('first/start') ?>">
+						<a href="<?= base_url('first/start') ?>" target="_blank">
 							<span class="material-symbols-outlined"> local_cafe </span>
 							Drink
 						</a>
 					</div>
 
 					<div class="checkbox">
-						<a href="<?= base_url('first/start') ?>">
+						<a href="<?= base_url('first/start') ?>" target="_blank">
 							<span class="material-symbols-outlined"> mode_cool </span>
 							Ice Cream
 						</a>
@@ -79,25 +79,6 @@
 			<div class="navbar-nav">
 				<h1><?= $title2; ?></h1>
 				<div class="profil">
-					<div class="icon">
-						<a href="<?= base_url('first/start') ?>"
-							><span
-								class="material-symbols-outlined"
-								style="color: var(--black)"
-							>
-								shopping_cart
-							</span></a
-						>
-						<div class="numb">
-							0
-						</div>
-					</div>
-
-					<div class="icon">
-						<a href="<?= base_url('first/start') ?>">
-							<span class="material-symbols-outlined" style="color: black;"> event_note </span>
-						</a>
-					</div>
 
 					<style>
 						.login-signin {
@@ -326,8 +307,8 @@
 						<span class="material-symbols-outlined">
 							shopping_cart
 						</span></button
-					>')?>
-					<a href="<?= base_url('first/start'); ?>" class="buy">Buy Now</a>
+					>', array('target' => '_blank'))?>
+					<a href="<?= base_url('first/start'); ?>" class="buy" target="_blank">Buy Now</a>
 				</div>
 			</div>
 		</div>

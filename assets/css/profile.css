@@ -13,40 +13,49 @@
 	--success-validation: #4ade80;
 }
 
-.profile {
-	display: flex;
-	align-items: center;
-	margin-top: 2rem;
+.message {
+	margin-top: 1rem;
 	width: 74%;
 	margin-left: 22%;
 	margin-right: 4%;
 }
 
+.profile {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 2rem;
+	margin-top: 1rem;
+	width: 74%;
+	margin-left: 22%;
+	margin-right: 4%;
+}
+
+/* My Profile */
 .profile .myprofile {
 	display: grid;
 	grid-template-rows: repeat(2, max-content);
 	gap: 1.5rem;
 	background-color: var(--white);
-  border: 2px solid var(--gray);
-	width: 35rem;
+	border: 2px solid var(--gray);
+	width: 100%;
 	padding: 2rem;
 	font-weight: 600;
-  border-radius: 1rem;
+	border-radius: 1rem;
 }
 
 .profile .myprofile .title h1 {
-  font-size: 1.2rem;
+	font-size: 1.2rem;
 	color: var(--black);
 }
 
 .profile .myprofile .title h2 {
-  font-size: 0.8rem;
+	font-size: 0.8rem;
 	color: var(--black);
-  font-weight: 400;
+	font-weight: 400;
 }
 
 .profile .myprofile .image-profile {
-  display: flex;
+	display: flex;
 	align-items: center;
 	gap: 0.5rem;
 	width: 100%;
@@ -58,7 +67,7 @@
 }
 
 .profile .myprofile .image-profile .image-upload img {
-  width: 5rem;
+	width: 5rem;
 	height: 5rem;
 	background-repeat: no-repeat;
 	object-fit: cover;
@@ -75,58 +84,157 @@
 }
 
 .profile .myprofile label {
-  font-size: 0.8rem;
+	font-size: 0.8rem;
 }
 
 .profile .myprofile .image-profile .profile-picture p {
-  font-size: 0.7rem;
-  color: var(--black);
-  font-weight: 400;
+	font-size: 0.7rem;
+	color: var(--black);
+	font-weight: 400;
 }
 
 .profile .myprofile form {
-  display: grid;
-  grid-template-rows: repeat(2, max-content);
-  gap: 1.5rem;
+	display: grid;
+	grid-template-rows: repeat(2, max-content);
+	gap: 1.5rem;
 }
 
 .profile .myprofile .input-profile {
-  display: grid;
+	display: grid;
 	grid-template-rows: repeat(4, max-content);
 	gap: 0.5rem;
 }
 
 .profile .myprofile .input-profile .inp-profile {
-  display: grid;
+	display: grid;
 	grid-template-rows: repeat(2, max-content);
 	gap: 0.5rem;
 	width: 100%;
 }
 
 .profile .myprofile .input-profile .inp-profile input {
-  font-family: "Poppins", sans-serif;
-  padding: 0.7rem 1rem;
+	font-family: "Poppins", sans-serif;
+	padding: 0.7rem 1rem;
 	border-radius: 0.5rem;
 	border: 2px solid var(--gray);
 	background: transparent;
 }
 
 .profile .myprofile .submit {
-  display: flex;
-	justify-content: end;
+	display: flex;
+	justify-content: space-between;
 	align-items: center;
 }
 
+.profile .myprofile .submit .change {
+	font-size: 0.8rem;
+	color: var(--black);
+}
+
+.profile .myprofile .submit .change:hover {
+	color: var(--yellow);
+}
+
 .profile .myprofile .submit button {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  padding: 0.3rem 1rem;
-  border-radius: 0.5rem;
-  background-color: var(--black);
-  color: var(--white);
-  font-size: 0.8rem;
+	font-family: "Poppins", sans-serif;
+	font-weight: 500;
+	padding: 0.3rem 1rem;
+	border-radius: 0.5rem;
+	background-color: var(--black);
+	color: var(--white);
+	font-size: 0.8rem;
 }
 
 .profile .myprofile .submit button:hover {
-  background-color: #474954;
+	background-color: #474954;
+}
+
+/* Change Password */
+.profile .changepass {
+	display: none;
+	grid-template-rows: repeat(2, max-content);
+	gap: 1.5rem;
+	background-color: var(--white);
+	border: 2px solid var(--gray);
+	width: 100%;
+	padding: 2rem;
+	font-weight: 600;
+	border-radius: 1rem;
+	position: relative;
+  animation: animateModal 0.7s;
+}
+
+@keyframes animateModal {
+	from {
+		top: -300px;
+		opacity: 0;
+	}
+
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+.profile .changepass .title h1 {
+	font-size: 1.2rem;
+	color: var(--black);
+}
+
+.profile .changepass .title h2 {
+	font-size: 0.8rem;
+	color: var(--black);
+	font-weight: 400;
+}
+
+.profile .changepass label {
+	font-size: 0.8rem;
+}
+
+.profile .changepass form {
+	display: grid;
+	grid-template-rows: repeat(2, max-content);
+	gap: 1.5rem;
+}
+
+.profile .changepass .input-profile {
+	display: grid;
+	grid-template-rows: repeat(3, max-content);
+	gap: 0.5rem;
+}
+
+.profile .changepass .input-profile .inp-profile {
+	display: grid;
+	grid-template-rows: repeat(3, max-content);
+	gap: 0.5rem;
+	width: 100%;
+}
+
+.profile .changepass .input-profile .inp-profile input {
+	font-family: "Poppins", sans-serif;
+	padding: 0.7rem 1rem;
+	border-radius: 0.5rem;
+	border: 2px solid var(--gray);
+	background: transparent;
+}
+
+.profile .changepass .submit {
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.profile .changepass .submit button {
+	font-family: "Poppins", sans-serif;
+	font-weight: 500;
+	padding: 0.3rem 1rem;
+	border-radius: 0.5rem;
+	background-color: var(--black);
+	color: var(--white);
+	font-size: 0.8rem;
+}
+
+.profile .changepass .submit button:hover {
+	background-color: #474954;
 }

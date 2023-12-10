@@ -178,14 +178,43 @@ class Dashboard extends CI_Controller
 
 	public function changePassword()
 	{
-		$data['title'] = 'Dashboard';
-		$data['admin'] = 'Admin';
+		$data['title'] = 'Flavia Food';
+		$data['title2'] = 'My Profile';
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+		$this->form_validation->set_rules('current_password', 'Current Password', 'required|trim');
+    $this->form_validation->set_rules('new_password1', 'New Password', 'required|trim|min_length[3]|matches[new_password2]');
+    $this->form_validation->set_rules('new_password2', 'Confirm New Password', 'required|trim|min_length[3]|matches[new_password1]');
 		
-		$this->load->view('template_admin/header', $data);
-		$this->load->view('template_admin/sidebar', $data);
-		$this->load->view('template_admin/topbar', $data);
-		$this->load->view('admin/dashboard', $data);
-		$this->load->view('template_admin/footer');
+		if ($this->form_validation->run() == false) {
+			$this->load->view('template/header', $data);
+			$this->load->view('template/sidebar', $data);
+			$this->load->view('template/topbar', $data);
+			$this->load->view('user/myprofile', $data);
+			$this->load->view('template/footer');
+    } else {
+      $current_password = $this->input->post('current_password');
+      $new_password = $this->input->post('new_password1');
+      if (!password_verify($current_password, $data['user']['password'])) {
+        $this->session->set_flashdata('message', '<div class="activation-failed">Wrong current password!</div>');
+        redirect('dashboard/changepassword');
+      } else {
+        if ($current_password == $new_password) {
+          $this->session->set_flashdata('message', '<div class="activation-failed">New password cannot be the same as current password!</div>');
+          redirect('dashboard/changepassword');
+        } else {
+          // password sudah ok
+          $password_hash = password_hash($new_password, PASSWORD_DEFAULT);
+          
+          $this->db->set('password', $password_hash);
+          $this->db->where('email', $this->session->userdata('email'));
+          $this->db->update('user');
+          
+          $this->session->set_flashdata('message', '<div class="activation-success">Password changed!</div>');
+          redirect('dashboard/changepassword');
+        }
+      }
+    }
 	}
+
 }
