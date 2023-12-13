@@ -12,6 +12,14 @@ class Menu_model extends CI_Model
     return $this->db->query($query)->result_array();
   }
 
+  public function jumlah_menu(){
+		return $this->db->get('user_menu')->num_rows();
+	}
+
+  public function jumlah_submenu(){
+		return $this->db->get('user_sub_menu')->num_rows();
+	}
+
   public function menuByid($id) {
     return $this->db->get_where('user_menu', ['id'=>$id])->row_array();
   }

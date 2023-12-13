@@ -12,7 +12,7 @@
           </div>
 
           <div class="icon">
-            <span class="material-symbols-outlined"> event_note </span>
+            <a href="<?= base_url('dashboard/detail_transaksi'); ?>"><span class="material-symbols-outlined" style="color: var(--black);"> event_note </span></a>
           </div>
 
           <div class="dropdown">

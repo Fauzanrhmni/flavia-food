@@ -3,7 +3,8 @@
       <aside>
         <div class="top">
           <div class="logo">
-            <img src="<?= base_url('assets/'); ?>img/logo.svg" />
+            <img src="<?= base_url('assets/'); ?>img/logo.svg" id="logo"/>
+            <img src="<?= base_url('assets/'); ?>img/icon.svg" id="icon"/>
           </div>
           <div class="close" id="close-btn">
             <span class="material-symbols-outlined"> close </span>

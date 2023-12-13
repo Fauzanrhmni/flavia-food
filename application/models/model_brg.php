@@ -7,6 +7,10 @@ class Model_brg extends CI_Model {
 	{
 		return $this->db->get('tb_barang');
 	}
+	
+	public function jumlah_brg(){
+		return $this->db->get('tb_barang')->num_rows();
+	}
 
 	public function tambah_barang($data, $table)
 	{

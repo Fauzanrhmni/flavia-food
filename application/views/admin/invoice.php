@@ -11,10 +11,12 @@
               <th>Action</th>
             </tr>
 
-            <?php foreach ($invoice as $inv) :?>
+            <?php 
+            $i = 1;
+            foreach ($invoice as $inv) :?>
 
             <tr>
-              <td><?= $inv->id ?></td>
+              <td><?= $i++ ?></td>
               <td><?= $inv->nama ?></td>
               <td><?= $inv->alamat ?></td>
               <td><?= $inv->tgl_pesan ?></td>

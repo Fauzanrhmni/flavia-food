@@ -16,6 +16,7 @@ class Dashboard extends CI_Controller
 		$data['title'] = 'Flavia Food';
 		$data['title2'] = 'Dashboard';
 		$data['barang'] = $this->model_brg->tampil_data()->result();
+		$data['pesanan'] = $this->model_invoice->ambil_id_pesanan($id_invoice);
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 		
 		$this->load->view('template/header', $data);
@@ -51,6 +52,34 @@ class Dashboard extends CI_Controller
 		$this->load->view('template/sidebar', $data);
 		$this->load->view('template/topbar', $data);
 		$this->load->view('user/keranjang', $data);
+		$this->load->view('template/footer');
+	}
+
+	public function detail_transaksi()
+	{
+		$data['title'] = 'Flavia Food';
+		$data['title2'] = 'Detail Transaksi';
+    $data['invoice'] = $this->model_invoice->tampil_data();
+		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+		$this->load->view('template/header', $data);
+		$this->load->view('template/sidebar', $data);
+		$this->load->view('template/topbar', $data);
+		$this->load->view('user/detail_transaksi', $data);
+		$this->load->view('template/footer');
+	}
+
+	public function detail_pesanan()
+	{
+		$data['title'] = 'Flavia Food';
+		$data['title2'] = 'Detail Transaksi';
+    $data['invoice'] = $this->model_invoice->tampil_data();
+		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+		$this->load->view('template/header', $data);
+		$this->load->view('template/sidebar', $data);
+		$this->load->view('template/topbar', $data);
+		$this->load->view('user/detail_transaksi', $data);
 		$this->load->view('template/footer');
 	}
 	

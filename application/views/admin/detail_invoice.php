@@ -16,13 +16,14 @@
 
 				<?php
         $total = 0;
-        foreach ($pesanan as $psn) :
+        $i = 1;
+        
           $subtotal = $psn->jumlah * $psn->harga;
           $total += $subtotal;
         ?>
 
 				<tr>
-					<td><?= $psn->id ?></td>
+					<td><?= $i++ ?></td>
 					<td><?= $psn->nama_brg ?></td>
 					<td><?= $psn->jumlah ?></td>
 					<td>Rp. <?= number_format($psn->harga,0,',','.') ?></td>

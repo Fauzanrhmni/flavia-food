@@ -49,7 +49,8 @@
 	transform: scale(0.7);
 }
 
-.keranjang {
+.keranjang,
+.transaksi {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 2rem;
@@ -69,51 +70,74 @@
 	padding: 1rem;
 }
 
+.transaksi .detail {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 1.5rem;
+	border: 2px solid var(--gray);
+	padding: 1rem 2rem;
+}
+
 .keranjang .product-item img {
 	height: 8rem;
 	object-fit: cover;
 	margin-right: 1.5rem;
 }
 
-.keranjang .product-item .title .product-title {
+.transaksi .detail .title {
+	width: 100%;
+}
+
+.keranjang .product-item .title .product-title,
+.transaksi .detail .title .product-title {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 1rem;
 }
 
-.keranjang .product-item .title .product-title h1 {
+.keranjang .product-item .title .product-title h1,
+.transaksi .detail .title .product-title h1 {
 	font-size: 1.5rem;
 	font-weight: 600;
 }
 
-.keranjang .product-item .title .product-title a {
+.keranjang .product-item .title .product-title a,
+.transaksi .detail .title .product-title a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.keranjang .product-item .title .product-title a span {
+.keranjang .product-item .title .product-title a span,
+.transaksi .detail .title .product-title a span {
 	color: var(--yellow);
 	cursor: pointer;
 }
 
-.keranjang .product-item .title .product-title a span:hover {
+.keranjang .product-item .title .product-title a span:hover, 
+.transaksi .detail .title .product-title a span:hover {
 	color: var(--black);
 }
 
-.keranjang .product-item .title .jumlah {
+.keranjang .product-item .title .jumlah,
+.transaksi .detail .title .jumlah {
 	margin-bottom: 1rem;
 }
 
 .keranjang .product-item .title .jumlah label,
 .keranjang .product-item .title .product-price label,
+.transaksi .detail .title .jumlah label,
+.transaksi .detail .title .product-price label,
 .total label {
 	font-size: 0.8rem;
 }
 
 .keranjang .product-item .title .jumlah h4,
 .keranjang .product-item .title .product-price h4,
+.transaksi .detail .title .jumlah h4,
+.transaksi .detail .title .product-price h4,
 .total h4 {
 	font-size: 1.3rem;
 	font-weight: 500;
@@ -124,6 +148,13 @@
 	justify-content: space-between;
 	align-items: center;
 	width: 20rem;
+}
+
+.transaksi .detail .title .product-price {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
 }
 
 .bayar {
@@ -149,5 +180,106 @@
 }
 
 .bayar .checkout:hover {
+	background-color: #e1b400;
+}
+
+/* Modal Pesanan */
+.modal-pesanan {
+	display: none;
+	position: fixed;
+	z-index: 999999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.pesanan-container {
+	display: block;
+	position: relative;
+	background-color: var(--white);
+	margin: 4% auto;
+	color: var(--black);
+	padding: 3rem;
+	width: 35rem;
+	border-radius: 1rem;
+	animation: animateModal 0.5s;
+}
+
+/* Modal Animation */
+@keyframes animateModal {
+	from {
+		top: -300px;
+		opacity: 0;
+	}
+
+	to {
+		top: 0;
+		opacity: 1;
+	}
+}
+
+.pesanan-container .close-icon {
+	position: absolute;
+	right: 1rem;
+	top: 1rem;
+	color: var(--gray);
+	transform: scale(0.9);
+}
+
+.pesanan-container .close-icon:hover {
+	color: #aeaeae;
+}
+
+.pesanan-container h5 {
+	font-size: 1.5rem;
+	font-weight: 500;
+	margin-bottom: 0.8rem;
+}
+
+.pesanan-container .pesanan {
+	display: grid;
+	grid-template-columns: max-content auto max-content max-content;
+	gap: 1rem;
+}
+
+.pesanan-container p {
+	font-size: 1rem;
+	font-weight: 500;
+	margin-bottom: 3rem;
+}
+
+.pesanan-container .btn {
+	display: flex;
+	justify-content: end;
+	text-align: center;
+}
+
+.pesanan-container .btn .cancel {
+	font-family: "Poppins", sans-serif;
+	padding: 0.5rem 1rem;
+	font-size: 1rem;
+	border-radius: 0.5rem;
+	background-color: var(--gray);
+	color: var(--white);
+}
+
+.pesanan-container .btn .cancel:hover {
+	background-color: #aeaeae;
+}
+
+.logout-container .btn .logout {
+	font-family: "Poppins", sans-serif;
+	padding: 0.5rem 1rem;
+	font-size: 1rem;
+	border-radius: 0.5rem;
+	background-color: var(--yellow);
+	color: var(--white);
+	margin-left: 1rem;
+}
+
+.logout-container .btn .logout:hover {
 	background-color: #e1b400;
 }

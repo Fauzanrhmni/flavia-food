@@ -14,6 +14,10 @@ class Dashboard_admin extends CI_Controller
 		$data['title'] = 'Dashboard';
 		$data['admin'] = 'Admin';
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+    $data['barang'] = $this->model_brg->jumlah_brg();
+    $data['invoice'] = $this->model_invoice->jumlah_invoice();
+    $data['menu'] = $this->menu_model->jumlah_menu();
+    $data['submenu'] = $this->menu_model->jumlah_submenu();
 		
 		$this->load->view('template_admin/header', $data);
 		$this->load->view('template_admin/sidebar', $data);

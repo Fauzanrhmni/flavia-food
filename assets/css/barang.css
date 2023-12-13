@@ -152,6 +152,10 @@ aside .logo img {
 	/* height: 2rem; */
 }
 
+#icon {
+	display: none;
+}
+
 aside .close {
 	display: none;
 }
@@ -451,10 +455,34 @@ footer:hover {
 		grid-template-columns: 7rem auto;
 	}
 
+	aside .top {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	aside .logo {
+		display: flex;
+		margin-left: 0;
+	}
+
 	aside .logo img {
-		width: 3rem;
+		width: 0;
+	}
+
+	aside .logo #logo {
+		display: none;
+	}
+
+	aside .logo #icon {
+		width: 100%;
+	}
+
+	#icon {
+		/* margin: 0 1.5rem; */
+		display: flex;
+		justify-content: start;
 		height: 3rem;
-		margin: 0 1.5rem;
 	}
 
 	aside .logo h2 {
@@ -498,8 +526,29 @@ footer:hover {
 		margin-left: 1rem;
 	}
 
+	aside .logo #logo {
+		width: 9rem;
+		display: block;
+	}
+
+	aside .top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 1.4rem;
+	}
+	
+	aside .logo {
+		display: flex;
+		margin-left: 2rem;
+	}
+	
 	aside .logo img {
 		width: 9rem;
+	}
+
+	#icon {
+		display: none;
 	}
 
 	aside .sidebar h3 {

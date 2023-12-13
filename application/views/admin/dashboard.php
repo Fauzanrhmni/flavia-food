@@ -1,69 +1,133 @@
 <!-- Dashboard Style -->
 
 <div class="insights">
-	<!-- Start Jumlah Kelas -->
+	<!-- Start Data Produk -->
 	<div class="kelas">
-		<span class="material-symbols-outlined"> groups </span>
-		<a href="#" target="_blank">
+		<span class="material-symbols-outlined"> database </span>
+		<a href="<?= base_url('admin/data_barang'); ?>">
 			<span class="material-symbols-outlined" id="edit"> edit</span>
 		</a>
 		<div class="middle">
 			<div class="left">
-				<h3>Jumlah Kelas</h3>
-				<h1>2</h1>
+				<h3>Data Produk</h3>
+				<h1><?= $barang; ?></h1>
 			</div>
 		</div>
-		<small class="text-muted">Tahun Ajaran 2022-2023</small>
+		<small class="text-muted">Flavia-Food</small>
 	</div>
-	<!-- End Jumlah Kelas -->
+	<!-- End Data Produk -->
 
-	<!-- Start Jumlah Siswa -->
+	<!-- Start Invoices -->
 	<div class="siswa">
-		<span class="material-symbols-outlined"> group </span>
-		<a href="#" target="_blank">
+		<span class="material-symbols-outlined" style="background-color: var(--color-success);"> receipt_long </span>
+		<a href="<?= base_url('admin/invoice'); ?>">
 			<span class="material-symbols-outlined" id="edit"> edit</span>
 		</a>
 		<div class="middle">
 			<div class="left">
-				<h3>Jumlah Siswa</h3>
-				<h1>34</h1>
+				<h3>Invoices</h3>
+				<h1><?= $invoice; ?></h1>
 			</div>
 		</div>
-		<small class="text-muted">Tahun Ajaran 2022-2023</small>
+		<small class="text-muted">Flavia-Food</small>
 	</div>
-	<!-- End Jumlah Siswa -->
+	<!-- End Invoices -->
 
-	<!-- Start Jumlah Pengajar -->
+	<!-- Start Menu -->
 	<div class="pengajar">
-		<span class="material-symbols-outlined"> group </span>
-		<a href="#" target="_blank">
+		<span class="material-symbols-outlined" style="background-color: var(--color-danger);"> folder </span>
+		<a href="<?= base_url('menu'); ?>">
 			<span class="material-symbols-outlined" id="edit"> edit</span>
 		</a>
 		<div class="middle">
 			<div class="left">
-				<h3>Jumlah Pengajar</h3>
-				<h1>6</h1>
+				<h3>Menu</h3>
+				<h1><?= $menu; ?></h1>
 			</div>
 		</div>
-		<small class="text-muted">Tahun Ajaran 2022-2023</small>
+		<small class="text-muted">Flavia-Food</small>
 	</div>
-	<!-- End Jumlah Pengajar -->
+	<!-- End Menu -->
 
-	<!-- Start Jumlah Kalender -->
+	<!-- Start Sub Menu -->
+	<div class="kalender">
+		<span class="material-symbols-outlined"> folder_open </span>
+		<a href="<?= base_url('menu/submenu'); ?>">
+			<span class="material-symbols-outlined" id="edit"> edit</span>
+		</a>
+		<div class="middle">
+			<div class="left">
+				<h3>Sub Menu</h3>
+				<h1><?= $submenu; ?></h1>
+			</div>
+		</div>
+		<small class="text-muted">Flavia-Food</small>
+	</div>
+	<!-- End Sub Menu -->
+
+	<!-- Start Sub Menu -->
+	<div class="kalender">
+		<span class="material-symbols-outlined" style="background-color: var(--color-success);"> person </span>
+		<a href="<?= base_url('menu/submenu'); ?>">
+			<span class="material-symbols-outlined" id="edit"> edit</span>
+		</a>
+		<div class="middle">
+			<div class="left">
+				<h3>User</h3>
+				<h1><?= $submenu; ?></h1>
+			</div>
+		</div>
+		<small class="text-muted">Flavia-Food</small>
+	</div>
+	<!-- End Sub Menu -->
+	
+	<!-- Start Sub Menu -->
+	<div class="kalender">
+		<span class="material-symbols-outlined" style="background-color: var(--color-danger);"> group_add </span>
+		<a href="<?= base_url('menu/submenu'); ?>">
+			<span class="material-symbols-outlined" id="edit"> edit</span>
+		</a>
+		<div class="middle">
+			<div class="left">
+				<h3>Role</h3>
+				<h1><?= $submenu; ?></h1>
+			</div>
+		</div>
+		<small class="text-muted">Flavia-Food</small>
+	</div>
+	<!-- End Sub Menu -->
+
+	<!-- Start Sub Menu -->
 	<div class="kalender">
 		<span class="material-symbols-outlined"> calendar_month </span>
-		<a href="#" target="_blank">
+		<a href="<?= base_url('menu/submenu'); ?>">
 			<span class="material-symbols-outlined" id="edit"> edit</span>
 		</a>
 		<div class="middle">
 			<div class="left">
-				<h3>Kalender Akademik</h3>
-				<h1>6</h1>
+				<h3>Sub Menu</h3>
+				<h1><?= $submenu; ?></h1>
 			</div>
 		</div>
-		<small class="text-muted">Tahun Ajaran 2022-2023</small>
+		<small class="text-muted">Flavia-Food</small>
 	</div>
-	<!-- End Jumlah Kalender -->
+	<!-- End Sub Menu -->
+
+	<!-- Start Sub Menu -->
+	<div class="kalender">
+		<span class="material-symbols-outlined" style="background-color: var(--color-success);"> calendar_month </span>
+		<a href="<?= base_url('menu/submenu'); ?>">
+			<span class="material-symbols-outlined" id="edit"> edit</span>
+		</a>
+		<div class="middle">
+			<div class="left">
+				<h3>Sub Menu</h3>
+				<h1><?= $submenu; ?></h1>
+			</div>
+		</div>
+		<small class="text-muted">Flavia-Food</small>
+	</div>
+	<!-- End Sub Menu -->
 </div>
 
 <!-- Profil Start -->

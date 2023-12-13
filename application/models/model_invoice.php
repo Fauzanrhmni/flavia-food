@@ -36,6 +36,10 @@ class Model_invoice extends CI_Model {
     return TRUE;
   }
 
+  public function jumlah_invoice(){
+		return $this->db->get('tb_invoice')->num_rows();
+	}
+
   public function tampil_data()
   {
     $result = $this->db->get('tb_invoice');
@@ -66,9 +70,21 @@ class Model_invoice extends CI_Model {
     }
   }
 
-  public function deleted($where, $table)
-	{
-		$this->db->where($where);
-		$this->db->delete($table);
-	}
+  // public function deleted($where, $table)
+	// {
+	// 	$this->db->where($where);
+	// 	$this->db->delete($table);
+	// }
+  
+
+  public function deleted($id_invoice)
+  {
+    // Hapus data dari tabel tb_pesanan
+    $this->db->where('id_invoice', $id_invoice);
+    $this->db->delete('tb_pesanan');
+    
+    // Hapus data dari tabel tb_invoice
+    $this->db->where('id', $id_invoice);
+    $this->db->delete('tb_invoice');
+  }
 }

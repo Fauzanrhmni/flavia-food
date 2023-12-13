@@ -12,7 +12,7 @@
 	<table class="table-submenu">
 		<tr>
 			<th>#</th>
-			<th>Nama Barang</th>
+			<th style="width: 15rem;">Nama Barang</th>
 			<th>Keterangan</th>
 			<th>Kategori</th>
 			<th>Harga</th>

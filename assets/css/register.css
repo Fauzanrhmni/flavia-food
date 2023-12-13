@@ -211,6 +211,7 @@ body {
 		border-radius: 2rem;
 		position: relative;
 		animation: animateModal 0.7s;
+		width: 40rem;
 	}
 
 	@keyframes animateModal {
