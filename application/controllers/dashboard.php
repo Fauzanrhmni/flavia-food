@@ -33,7 +33,7 @@ class Dashboard extends CI_Controller
 
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
-		$keyword = $this->input->post('keyword');
+		$keyword = $this->input->get('keyword');
 		$data['barang'] = $this->model_brg->get_keyword($keyword);
 
 		$this->load->view('template/header', $data);

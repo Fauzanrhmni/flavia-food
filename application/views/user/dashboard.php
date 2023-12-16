@@ -8,12 +8,13 @@
       </div>
 
       <form action="<?= base_url('dashboard/search'); ?>" method="get">
-      <div class="search">
-        <span class="material-symbols-outlined"> search </span>
-        <input type="text" name="keyword" id="keyword" placeholder="Search.." />
-        <input type="submit" name="submit">
-      </div>
+        <div class="search">
+          <span class="material-symbols-outlined"> search </span>
+          <input type="text" name="keyword" id="keyword" placeholder="Search.." />
+          <button type="submit"></button>
+        </div>
       </form>
+      
 
       <div class="content">
         <?php foreach ($barang as $brg) : ?>

@@ -14,7 +14,7 @@ class Kategori extends CI_Controller
   public function junkfood() 
   {
     $data['title'] = 'Flavia Food';
-		$data['title2'] = 'Junkfood';
+		$data['title2'] = 'Dashboard';
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
     $data['junkfood'] = $this->model_kategori->junkfood_product()->result();
@@ -29,7 +29,7 @@ class Kategori extends CI_Controller
   public function pizza() 
   {
     $data['title'] = 'Flavia Food';
-		$data['title2'] = 'Pizza';
+		$data['title2'] = 'Dashboard';
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
     $data['pizza'] = $this->model_kategori->pizza_product()->result();
@@ -44,7 +44,7 @@ class Kategori extends CI_Controller
   public function mie() 
   {
     $data['title'] = 'Flavia Food';
-		$data['title2'] = 'Mie';
+		$data['title2'] = 'Dashboard';
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
     $data['mie'] = $this->model_kategori->mie_product()->result();
@@ -59,7 +59,7 @@ class Kategori extends CI_Controller
   public function drink() 
   {
     $data['title'] = 'Flavia Food';
-		$data['title2'] = 'Drink';
+		$data['title2'] = 'Dashboard';
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
     $data['drink'] = $this->model_kategori->drink_product()->result();
@@ -74,7 +74,7 @@ class Kategori extends CI_Controller
   public function icecream() 
   {
     $data['title'] = 'Flavia Food';
-		$data['title2'] = 'Ice Cream';
+		$data['title2'] = 'Dashboard';
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
     $data['icecream'] = $this->model_kategori->icecream_product()->result();

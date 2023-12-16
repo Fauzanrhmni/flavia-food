@@ -3,14 +3,17 @@
     <!-- Main Start -->
     <main class="hero">
       <div class="heading">
-        <h1>Hi, Flavia</h1>
+        <h1>Hi, <?= $user['name']; ?></h1>
         <h2>Jelajahi Makanan dan Minuman Favorit Anda</h2>
       </div>
 
-      <div class="search">
-        <span class="material-symbols-outlined"> search </span>
-        <input type="search" name="search" id="search" placeholder="Search.." />
-      </div>
+      <form action="<?= base_url('dashboard/search'); ?>" method="get">
+        <div class="search">
+          <span class="material-symbols-outlined"> search </span>
+          <input type="text" name="keyword" id="keyword" placeholder="Search.." />
+          <button type="submit"></button>
+        </div>
+      </form>
 
       <div class="content">
         <?php foreach ($junkfood as $brg) : ?>
