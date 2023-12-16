@@ -4,7 +4,7 @@
         <div class="top">
           <div class="logo">
             <img src="<?= base_url('assets/'); ?>img/logo.svg" id="logo"/>
-            <img src="<?= base_url('assets/'); ?>img/icon.svg" id="icon"/>
+            <img src="<?= base_url('assets/'); ?>img/icon.svg" id="icon1"/>
           </div>
           <div class="close" id="close-btn">
             <span class="material-symbols-outlined"> close </span>

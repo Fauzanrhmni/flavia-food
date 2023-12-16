@@ -68,13 +68,13 @@
 	<!-- Start Sub Menu -->
 	<div class="kalender">
 		<span class="material-symbols-outlined" style="background-color: var(--color-success);"> person </span>
-		<a href="<?= base_url('menu/submenu'); ?>">
+		<a href="<?= base_url('admin/dashboard_admin/datauser'); ?>">
 			<span class="material-symbols-outlined" id="edit"> edit</span>
 		</a>
 		<div class="middle">
 			<div class="left">
 				<h3>User</h3>
-				<h1><?= $submenu; ?></h1>
+				<h1><?= $datauser; ?></h1>
 			</div>
 		</div>
 		<small class="text-muted">Flavia-Food</small>
@@ -84,50 +84,19 @@
 	<!-- Start Sub Menu -->
 	<div class="kalender">
 		<span class="material-symbols-outlined" style="background-color: var(--color-danger);"> group_add </span>
-		<a href="<?= base_url('menu/submenu'); ?>">
+		<a href="<?= base_url('admin/dashboard_admin/role'); ?>">
 			<span class="material-symbols-outlined" id="edit"> edit</span>
 		</a>
 		<div class="middle">
 			<div class="left">
 				<h3>Role</h3>
-				<h1><?= $submenu; ?></h1>
+				<h1><?= $role; ?></h1>
 			</div>
 		</div>
 		<small class="text-muted">Flavia-Food</small>
 	</div>
 	<!-- End Sub Menu -->
 
-	<!-- Start Sub Menu -->
-	<div class="kalender">
-		<span class="material-symbols-outlined"> calendar_month </span>
-		<a href="<?= base_url('menu/submenu'); ?>">
-			<span class="material-symbols-outlined" id="edit"> edit</span>
-		</a>
-		<div class="middle">
-			<div class="left">
-				<h3>Sub Menu</h3>
-				<h1><?= $submenu; ?></h1>
-			</div>
-		</div>
-		<small class="text-muted">Flavia-Food</small>
-	</div>
-	<!-- End Sub Menu -->
-
-	<!-- Start Sub Menu -->
-	<div class="kalender">
-		<span class="material-symbols-outlined" style="background-color: var(--color-success);"> calendar_month </span>
-		<a href="<?= base_url('menu/submenu'); ?>">
-			<span class="material-symbols-outlined" id="edit"> edit</span>
-		</a>
-		<div class="middle">
-			<div class="left">
-				<h3>Sub Menu</h3>
-				<h1><?= $submenu; ?></h1>
-			</div>
-		</div>
-		<small class="text-muted">Flavia-Food</small>
-	</div>
-	<!-- End Sub Menu -->
 </div>
 
 <!-- Profil Start -->

@@ -14,7 +14,7 @@
 		<div class="title">
 			<div class="product-title">
 				<h1><?= $inv->nama ?></h1>
-				<a href="#"
+				<a href="<?= base_url('dashboard/detail_pesanan/'). $inv->id; ?>"
 					><span class="material-symbols-outlined" id="visi"> visibility </span></a
 				>
 			</div>
@@ -38,10 +38,7 @@
 </div>
 
 <!-- Model Box Item Detail Start -->
-<?php
-foreach ($pesanan as $psn) :
-?>
-<div class="modal-pesanan" id="modal-pesanan">
+<!-- <div class="modal-pesanan" id="modal-pesanan">
 	<div class="pesanan-container">
 		<a href="#" class="close-icon"
 			><span class="material-symbols-outlined">close</span></a
@@ -49,15 +46,15 @@ foreach ($pesanan as $psn) :
 		<h5>Detail Pesanan</h5>
 		<div class="pesanan">
       <p>1x</p>
-      <p><?= $psn->nama_brg ?></p>
+      <p>sgdsghfjtejet</p>
       <p>Rp. 10.000</p>
       <p>Rp. 10.000</p>
     </div>
 	</div>
-</div>
+</div> -->
 <!-- Navbar End -->
 
-<script>
+<!-- <script>
 	// Modal Box
 	const pesananModal = document.querySelector("#modal-pesanan");
 	const visiButton = document.querySelectorAll("#visi");
@@ -81,6 +78,5 @@ foreach ($pesanan as $psn) :
 			pesananModal.style.display = "none";
 		}
 	};
-</script>
+</script> -->
 
-<?php endforeach; ?>

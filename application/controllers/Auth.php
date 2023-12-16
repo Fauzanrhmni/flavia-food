@@ -122,7 +122,7 @@ class Auth extends CI_Controller
 
       $this->_sendEmail($token, 'verify');
 
-      $this->session->set_flashdata('message', '<div class="activation-success">Congratulation your account has been created. Please activate your account</div>');
+      $this->session->set_flashdata('message', '<div class="activation-success" style="text-align: start;">Congratulation your account has been created. Please activate your account</div>');
       redirect('auth');
     }
   }

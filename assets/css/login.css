@@ -100,7 +100,7 @@ body {
 	border-radius: 0.5rem;
 	font-weight: 400;
 	font-size: 1rem;
-	text-align: justify;
+	text-align: start;
 }
 
 .activation-failed {
@@ -110,7 +110,7 @@ body {
 	border-radius: 0.5rem;
 	font-weight: 400;
 	font-size: 1rem;
-	text-align: justify;
+	text-align: start;
 }
 
 .login-page .login .input-group {

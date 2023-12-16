@@ -24,7 +24,7 @@
     <input type="hidden" name="id" value="<?= $role['id']; ?>">
     
     <div class="input">
-      <label for="role">Edit TItle Role</label>
+      <label for="role">Edit Title Role</label>
       <input type="text" name="role" id="role" value="<?= $role['role']; ?>">
     </div>
     

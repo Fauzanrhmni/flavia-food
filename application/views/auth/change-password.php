@@ -8,7 +8,7 @@
 			<div class="login-page">
 				<div class="login">
 					<h1>Change your <span>Password</span></h1>
-					<p style="margin: auto; font-weight: 500; padding: 0.3rem 0.5rem; background-color: var(--green); width: 20rem; color: var(--white); border-radius: 2rem;">
+					<p style="margin: auto; font-weight: 500; padding: 0.3rem 0.5rem; background-color: var(--success-validation); width: 20rem; color: var(--white); border-radius: 2rem;">
 						<?= $this->session->userdata('reset_email'); ?>
 					</p>
 

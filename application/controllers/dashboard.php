@@ -16,9 +16,26 @@ class Dashboard extends CI_Controller
 		$data['title'] = 'Flavia Food';
 		$data['title2'] = 'Dashboard';
 		$data['barang'] = $this->model_brg->tampil_data()->result();
-		$data['pesanan'] = $this->model_invoice->ambil_id_pesanan($id_invoice);
+		// $data['pesanan'] = $this->model_invoice->ambil_id_pesanan($id_invoice);
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 		
+		$this->load->view('template/header', $data);
+		$this->load->view('template/sidebar', $data);
+		$this->load->view('template/topbar', $data);
+		$this->load->view('user/dashboard', $data);
+		$this->load->view('template/footer');
+	}
+
+	public function search()
+	{
+		$data['title'] = 'Flavia Food';
+		$data['title2'] = 'Dashboard';
+
+		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+		$keyword = $this->input->post('keyword');
+		$data['barang'] = $this->model_brg->get_keyword($keyword);
+
 		$this->load->view('template/header', $data);
 		$this->load->view('template/sidebar', $data);
 		$this->load->view('template/topbar', $data);
@@ -69,17 +86,19 @@ class Dashboard extends CI_Controller
 		$this->load->view('template/footer');
 	}
 
-	public function detail_pesanan()
+	public function detail_pesanan($id_invoice)
 	{
 		$data['title'] = 'Flavia Food';
-		$data['title2'] = 'Detail Transaksi';
-    $data['invoice'] = $this->model_invoice->tampil_data();
+		$data['title2'] = 'Detail Pesanan';
+    // $data['invoice'] = $this->model_invoice->tampil_data();
+		$data['invoice'] = $this->model_invoice->ambil_id_invoice($id_invoice);
+		$data['pesanan'] = $this->model_invoice->ambil_id_pesanan($id_invoice);
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
 		$this->load->view('template/header', $data);
 		$this->load->view('template/sidebar', $data);
 		$this->load->view('template/topbar', $data);
-		$this->load->view('user/detail_transaksi', $data);
+		$this->load->view('user/detail_pesanan', $data);
 		$this->load->view('template/footer');
 	}
 	

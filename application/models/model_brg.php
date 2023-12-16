@@ -7,6 +7,14 @@ class Model_brg extends CI_Model {
 	{
 		return $this->db->get('tb_barang');
 	}
+
+	public function get_keyword($keyword)
+	{
+		$this->db->select('*');
+		$this->db->from('tb_barang');
+		$this->db->like('nama_brg', $keyword);
+		return $this->db->get()->result();
+	}
 	
 	public function jumlah_brg(){
 		return $this->db->get('tb_barang')->num_rows();

@@ -20,6 +20,14 @@ class Menu_model extends CI_Model
 		return $this->db->get('user_sub_menu')->num_rows();
 	}
 
+  public function jumlah_user(){
+		return $this->db->get('user')->num_rows();
+	}
+
+  public function jumlah_role(){
+		return $this->db->get('user_role')->num_rows();
+	}
+
   public function menuByid($id) {
     return $this->db->get_where('user_menu', ['id'=>$id])->row_array();
   }
@@ -45,5 +53,14 @@ class Menu_model extends CI_Model
   public function updateRole($id, $data) {
     $this->db->where(['id'=>$id]);
     $this->db->update('user_role', $data);
+  }
+
+  public function userByid($id) {
+    return $this->db->get_where('user', ['id'=>$id])->row_array();
+  }
+
+  public function updateUser($id, $data) {
+    $this->db->where(['id'=>$id]);
+    $this->db->update('user', $data);
   }
 }

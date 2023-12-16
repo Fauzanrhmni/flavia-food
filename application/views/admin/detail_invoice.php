@@ -17,7 +17,7 @@
 				<?php
         $total = 0;
         $i = 1;
-        
+        foreach ($pesanan as $psn) :
           $subtotal = $psn->jumlah * $psn->harga;
           $total += $subtotal;
         ?>

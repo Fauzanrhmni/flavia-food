@@ -96,8 +96,8 @@
           </div>
 
           <div class="submit">
-            <button type="button" class="cancel">Cancel</button>
-            <button type="submit">Save</button>
+            <button type="button">Cancel</button>
+            <button type="submit" style="background-color: var(--yellow);">Save</button>
           </div>
 
         </form>

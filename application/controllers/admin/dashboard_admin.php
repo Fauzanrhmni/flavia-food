@@ -18,6 +18,8 @@ class Dashboard_admin extends CI_Controller
     $data['invoice'] = $this->model_invoice->jumlah_invoice();
     $data['menu'] = $this->menu_model->jumlah_menu();
     $data['submenu'] = $this->menu_model->jumlah_submenu();
+    $data['datauser'] = $this->menu_model->jumlah_user();
+    $data['role'] = $this->menu_model->jumlah_role();
 		
 		$this->load->view('template_admin/header', $data);
 		$this->load->view('template_admin/sidebar', $data);
@@ -25,6 +27,68 @@ class Dashboard_admin extends CI_Controller
 		$this->load->view('admin/dashboard', $data);
 		$this->load->view('template_admin/footer');
 	}
+
+	public function dataUser()
+	{
+    $data['title'] = 'Data User';
+    $data['admin'] = 'Admin';
+    $data['datauser'] = $this->db->get('user')->result_array();
+
+    $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+    $this->load->view('template_admin/header', $data);
+    $this->load->view('template_admin/sidebar', $data);
+    $this->load->view('template_admin/topbar', $data);
+    $this->load->view('admin/data_user', $data);
+    $this->load->view('template_admin/footer');
+	}
+
+  public function deleteUser($id) {
+    $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+    $this->db->where('id', $id);
+    $this->db->delete('user');
+
+    if ($this->db->affected_rows() > 0) {
+      $this->session->set_flashdata('message', '<div class="activation-success">Deleted User!</div>');
+    } else {
+      $this->session->set_flashdata('message', '<div class="activation-failed">Failed Delete User!</div>');
+    } 
+    redirect('admin/dashboard_admin/datauser');
+  }
+
+  public function editUser($id) {
+    $data['title'] = 'Data User';
+    $data['admin'] = 'Admin';
+    $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+    $this->load->model('Menu_model', 'menu');
+
+    // $data['menu'] = $this->db->get('user')->result_array();
+    $data['datauser'] = $this->menu->userByid($id);
+
+    $this->form_validation->set_rules('name', 'Name', 'required');
+    $this->form_validation->set_rules('email', 'Email', 'required');
+    $this->form_validation->set_rules('role_id', 'Role', 'required');
+
+    if($this->form_validation->run() == false){
+      $this->load->view('template_admin/header', $data);
+      $this->load->view('template_admin/sidebar', $data);
+      $this->load->view('template_admin/topbar', $data);
+      $this->load->view('admin/edit_user', $data);
+      $this->load->view('template_admin/footer');
+    } else {
+      $id = $this->input->post('id');
+      $data = [
+        'name' => $this->input->post('name'),
+        'email' => $this->input->post('email'),
+        'role_id' => $this->input->post('role_id'),
+        'is_active' => $this->input->post('is_active')
+      ];
+
+      $this->menu->updateUser($id, $data);
+      $this->session->set_flashdata('message', '<div class="activation-success">Successfully edited the menu!</div>');
+      redirect('admin/dashboard_admin/datauser');
+    }
+  }
 
 	public function role()
 	{

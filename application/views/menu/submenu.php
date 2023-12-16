@@ -1,7 +1,7 @@
         <div class="table">
           <?php if(validation_errors()) : ?>
-          <div class="activation">
-            <p><?= validation_errors(); ?></p>
+          <div class="activation-failed">
+            <?= validation_errors(' '); ?>
           </div>
           <?php endif; ?>
 

@@ -130,7 +130,6 @@ b {
 }
 
 /* Aside Start */
-
 aside {
 	height: 100vh;
 }
@@ -152,7 +151,7 @@ aside .logo img {
 	/* height: 2rem; */
 }
 
-#icon {
+#icon1 {
 	display: none;
 }
 
@@ -190,9 +189,7 @@ aside .sidebar a span {
 }
 
 aside .sidebar a:last-child {
-	position: absolute;
-	bottom: 2rem;
-	width: 100%;
+	margin-top: 1.5rem;
 }
 
 aside .sidebar a.active {
@@ -474,11 +471,11 @@ footer:hover {
 		display: none;
 	}
 
-	aside .logo #icon {
+	aside .logo #icon1 {
 		width: 100%;
 	}
 
-	#icon {
+	#icon1 {
 		/* margin: 0 1.5rem; */
 		display: flex;
 		justify-content: start;
@@ -537,17 +534,17 @@ footer:hover {
 		justify-content: space-between;
 		margin-top: 1.4rem;
 	}
-	
+
 	aside .logo {
 		display: flex;
 		margin-left: 2rem;
 	}
-	
+
 	aside .logo img {
 		width: 9rem;
 	}
 
-	#icon {
+	#icon1 {
 		display: none;
 	}
 
