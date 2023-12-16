@@ -1,15 +1,15 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller 
+class Dashboard extends CI_Controller
 {
 	public function __construct()
-  {
-    parent::__construct();
+	{
+		parent::__construct();
 		if (!$this->session->userdata('email')) {
 			redirect('auth');
 		}
-  }
+	}
 
 	public function index()
 	{
@@ -18,23 +18,6 @@ class Dashboard extends CI_Controller
 		$data['barang'] = $this->model_brg->tampil_data()->result();
 		// $data['pesanan'] = $this->model_invoice->ambil_id_pesanan($id_invoice);
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-		
-		$this->load->view('template/header', $data);
-		$this->load->view('template/sidebar', $data);
-		$this->load->view('template/topbar', $data);
-		$this->load->view('user/dashboard', $data);
-		$this->load->view('template/footer');
-	}
-
-	public function search()
-	{
-		$data['title'] = 'Flavia Food';
-		$data['title2'] = 'Dashboard';
-
-		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-
-		$keyword = $this->input->post('keyword');
-		$data['barang'] = $this->model_brg->get_keyword($keyword);
 
 		$this->load->view('template/header', $data);
 		$this->load->view('template/sidebar', $data);
@@ -42,11 +25,28 @@ class Dashboard extends CI_Controller
 		$this->load->view('user/dashboard', $data);
 		$this->load->view('template/footer');
 	}
+
+	// public function search()
+	// {
+	// 	$data['title'] = 'Flavia Food';
+	// 	$data['title2'] = 'Dashboard';
+
+	// 	$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+	// 	$keyword = $this->input->post('keyword');
+	// 	$data['barang'] = $this->model_brg->get_keyword($keyword);
+
+	// 	$this->load->view('template/header', $data);
+	// 	$this->load->view('template/sidebar', $data);
+	// 	$this->load->view('template/topbar', $data);
+	// 	$this->load->view('user/dashboard', $data);
+	// 	$this->load->view('template/footer');
+	// }
 
 	public function addkeranjang($id)
 	{
 		$barang = $this->model_brg->find($id);
-		
+
 		$data = array(
 			'id' => $barang->id,
 			'qty' => 1,
@@ -58,7 +58,7 @@ class Dashboard extends CI_Controller
 		$this->cart->insert($data);
 		redirect('dashboard');
 	}
-	
+
 	public function detail_keranjang()
 	{
 		$data['title'] = 'Flavia Food';
@@ -76,7 +76,7 @@ class Dashboard extends CI_Controller
 	{
 		$data['title'] = 'Flavia Food';
 		$data['title2'] = 'Detail Transaksi';
-    $data['invoice'] = $this->model_invoice->tampil_data();
+		$data['invoice'] = $this->model_invoice->tampil_data();
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
 		$this->load->view('template/header', $data);
@@ -90,7 +90,7 @@ class Dashboard extends CI_Controller
 	{
 		$data['title'] = 'Flavia Food';
 		$data['title2'] = 'Detail Pesanan';
-    // $data['invoice'] = $this->model_invoice->tampil_data();
+		// $data['invoice'] = $this->model_invoice->tampil_data();
 		$data['invoice'] = $this->model_invoice->ambil_id_invoice($id_invoice);
 		$data['pesanan'] = $this->model_invoice->ambil_id_pesanan($id_invoice);
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
@@ -101,7 +101,7 @@ class Dashboard extends CI_Controller
 		$this->load->view('user/detail_pesanan', $data);
 		$this->load->view('template/footer');
 	}
-	
+
 	public function delete_cart()
 	{
 		$this->cart->destroy();
@@ -139,7 +139,7 @@ class Dashboard extends CI_Controller
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
 		$is_processed = $this->model_invoice->index();
-		if($is_processed) {
+		if ($is_processed) {
 			$this->cart->destroy();
 			$this->load->view('template/header', $data);
 			$this->load->view('template/sidebar', $data);
@@ -175,7 +175,7 @@ class Dashboard extends CI_Controller
 
 		$this->form_validation->set_rules('name', 'Full Name', 'required|trim');
 
-		if($this->form_validation->run() == false) {
+		if ($this->form_validation->run() == false) {
 			$this->load->view('template/header', $data);
 			$this->load->view('template/sidebar', $data);
 			$this->load->view('template/topbar', $data);
@@ -188,7 +188,7 @@ class Dashboard extends CI_Controller
 			// cek jika ada gambar yang akan diupload
 			$upload_image = $_FILES['image']['name'];
 
-			if($upload_image) {
+			if ($upload_image) {
 				$config['allowed_types'] = 'gif|jpg|png|jpeg';
 				$config['max_size']      = '2048';
 				$config['upload_path'] 	 = './assets/img/profile/';
@@ -231,38 +231,51 @@ class Dashboard extends CI_Controller
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
 		$this->form_validation->set_rules('current_password', 'Current Password', 'required|trim');
-    $this->form_validation->set_rules('new_password1', 'New Password', 'required|trim|min_length[3]|matches[new_password2]');
-    $this->form_validation->set_rules('new_password2', 'Confirm New Password', 'required|trim|min_length[3]|matches[new_password1]');
-		
+		$this->form_validation->set_rules('new_password1', 'New Password', 'required|trim|min_length[3]|matches[new_password2]');
+		$this->form_validation->set_rules('new_password2', 'Confirm New Password', 'required|trim|min_length[3]|matches[new_password1]');
+
 		if ($this->form_validation->run() == false) {
 			$this->load->view('template/header', $data);
 			$this->load->view('template/sidebar', $data);
 			$this->load->view('template/topbar', $data);
 			$this->load->view('user/myprofile', $data);
 			$this->load->view('template/footer');
-    } else {
-      $current_password = $this->input->post('current_password');
-      $new_password = $this->input->post('new_password1');
-      if (!password_verify($current_password, $data['user']['password'])) {
-        $this->session->set_flashdata('message', '<div class="activation-failed">Wrong current password!</div>');
-        redirect('dashboard/changepassword');
-      } else {
-        if ($current_password == $new_password) {
-          $this->session->set_flashdata('message', '<div class="activation-failed">New password cannot be the same as current password!</div>');
-          redirect('dashboard/changepassword');
-        } else {
-          // password sudah ok
-          $password_hash = password_hash($new_password, PASSWORD_DEFAULT);
-          
-          $this->db->set('password', $password_hash);
-          $this->db->where('email', $this->session->userdata('email'));
-          $this->db->update('user');
-          
-          $this->session->set_flashdata('message', '<div class="activation-success">Password changed!</div>');
-          redirect('dashboard/changepassword');
-        }
-      }
-    }
-	}
+		} else {
+			$current_password = $this->input->post('current_password');
+			$new_password = $this->input->post('new_password1');
+			if (!password_verify($current_password, $data['user']['password'])) {
+				$this->session->set_flashdata('message', '<div class="activation-failed">Wrong current password!</div>');
+				redirect('dashboard/changepassword');
+			} else {
+				if ($current_password == $new_password) {
+					$this->session->set_flashdata('message', '<div class="activation-failed">New password cannot be the same as current password!</div>');
+					redirect('dashboard/changepassword');
+				} else {
+					// password sudah ok
+					$password_hash = password_hash($new_password, PASSWORD_DEFAULT);
 
+					$this->db->set('password', $password_hash);
+					$this->db->where('email', $this->session->userdata('email'));
+					$this->db->update('user');
+
+					$this->session->set_flashdata('message', '<div class="activation-success">Password changed!</div>');
+					redirect('dashboard/changepassword');
+				}
+			}
+		}
+	}
+	public function search()
+	{
+		$data['title'] = 'Flavia Food';
+		$data['title2'] = 'Dashboard';
+		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+		$keyword = $this->input->get('keyword');
+		$data['barang'] = $this->model_brg->get_keyword($keyword);
+
+		$this->load->view('template/header', $data);
+		$this->load->view('template/sidebar', $data);
+		$this->load->view('template/topbar', $data);
+		$this->load->view('user/dashboard', $data);
+		$this->load->view('template/footer');
+	}
 }
