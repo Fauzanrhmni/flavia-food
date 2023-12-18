@@ -73,6 +73,7 @@ class Invoice extends CI_Controller
 		// Redirect kembali ke halaman status pesanan
 		redirect('admin/invoice');
 	}
+
 	public function hapus_pesanan($id_pesanan) {
 			// Lakukan validasi admin di sini
 			// Pastikan hanya admin yang berhak untuk menghapus pesanan

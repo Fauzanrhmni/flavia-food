@@ -84,6 +84,17 @@ class Dashboard extends CI_Controller
 		$this->load->view('template/footer');
 	}
 
+	public function update_status_user($id_invoice, $status) {
+		// Lakukan validasi admin di sini
+		// Pastikan hanya admin yang berhak untuk melakukan update status
+
+		// Lakukan update status pesanan menggunakan model_invoice
+		$this->model_invoice->update_status_pesanan($id_invoice, $status);
+
+		// Redirect kembali ke halaman status pesanan
+		redirect('dashboard/detail_transaksi');
+	}
+
 	public function detail_pesanan($id_invoice)
 	{
 		$data['title'] = 'Flavia Food';
