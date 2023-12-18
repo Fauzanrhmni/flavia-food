@@ -123,7 +123,7 @@ class Menu extends CI_Controller
   }
 
   public function editSubmenu($id) {
-    $data['title'] = 'Edit Submenu';
+    $data['title'] = 'Sub Menu';
     $data['admin'] = 'Admin';
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $this->load->model('Menu_model', 'submenu');

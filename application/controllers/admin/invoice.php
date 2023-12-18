@@ -14,6 +14,7 @@ class Invoice extends CI_Controller
     $data['admin'] = 'Admin';
     $data['invoice'] = $this->model_invoice->tampil_data();
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+		// $data['pesanan'] = $this->model_invoice->get_all_pesanan();
 
 		$this->load->view('template_admin/header', $data);
 		$this->load->view('template_admin/sidebar', $data);
@@ -28,6 +29,7 @@ class Invoice extends CI_Controller
     $data['admin'] = 'Admin';
 		$data['invoice'] = $this->model_invoice->ambil_id_invoice($id_invoice);
 		$data['pesanan'] = $this->model_invoice->ambil_id_pesanan($id_invoice);
+		// $data['pesanan'] = $this->model_invoice->get_all_pesanan();
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
 
@@ -38,19 +40,6 @@ class Invoice extends CI_Controller
 		$this->load->view('template_admin/footer');
 	}
 
-	// public function deleteSubMenu($id) {
-  //   $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-  //   $this->db->where('id', $id);
-  //   $this->db->delete('user_sub_menu');
-
-  //   if ($this->db->affected_rows() > 0) {
-  //     $this->session->set_flashdata('message', '<div class="activation-success">Deleted Sub Menu!</div>');
-  //   } else {
-  //     $this->session->set_flashdata('message', '<div class="activation-failed">Failed Delete Submenu!</div>');
-  //   } 
-  //   redirect('menu/submenu');
-  // }
-
 	public function deleteinvoice($id_invoice)
   {
     // $where = array('id' => $id);
@@ -59,5 +48,40 @@ class Invoice extends CI_Controller
     $this->session->set_flashdata('message', '<div class="activation-success">Deleted Invoice!</div>');
     redirect('admin/invoice');
   }
+
+	public function pengiriman(){
+		$data['title'] = 'Pengiriman';
+    $data['admin'] = 'Admin';
+    $data['invoice'] = $this->model_invoice->tampil_data();
+		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+		$data['pesanan'] = $this->model_invoice->get_all_pesanan();
+
+		$this->load->view('template_admin/header', $data);
+		$this->load->view('template_admin/sidebar', $data);
+		$this->load->view('template_admin/topbar', $data);
+		$this->load->view('admin/pengiriman', $data);
+		$this->load->view('template_admin/footer');
+  }
+
+	public function update_status($id_invoice, $status) {
+		// Lakukan validasi admin di sini
+		// Pastikan hanya admin yang berhak untuk melakukan update status
+
+		// Lakukan update status pesanan menggunakan model_invoice
+		$this->model_invoice->update_status_pesanan($id_invoice, $status);
+
+		// Redirect kembali ke halaman status pesanan
+		redirect('admin/invoice');
+	}
+	public function hapus_pesanan($id_pesanan) {
+			// Lakukan validasi admin di sini
+			// Pastikan hanya admin yang berhak untuk menghapus pesanan
+
+			// Panggil model untuk melakukan penghapusan pesanan
+			$this->model_invoice->hapus_pesanan($id_pesanan);
+
+			// Redirect kembali ke halaman status pesanan
+			redirect('admin/invoice');
+	}
 }
 

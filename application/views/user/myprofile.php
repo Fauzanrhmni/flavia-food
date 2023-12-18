@@ -126,8 +126,3 @@
 			</script>
     </main>
     <!-- Main End -->
-    
-    
-    
-    
-    

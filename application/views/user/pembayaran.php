@@ -80,9 +80,6 @@
 			<div class="input-data">
 				<h2>Input Alamat Pengiriman</h2>
 				<div class="check-form">
-						<!-- <div class="form-group">
-						<?= $this->session->flashdata('message'); ?>
-						</div> -->
 
 						<div class="form-group">
 							<input type="text" placeholder="Nama Lengkap" name="nama" required/>
@@ -96,13 +93,15 @@
 							<input type="text" placeholder="No.Telepon/Whatsapp" name="contact" required/>
 						</div>
 
+						<input type="hidden" name="email" value="<?= $this->session->userdata('email'); ?>"/>
+
 						<div class="form-group">
 							<select
 								name="pembayaran"
 								id="pembayaran"
 								onchange="tampilkanPilihan()"
 							>
-								<option>Select Pembayaran</option>
+								<option value="" selected disabled>Select Pembayaran</option>
 								<option value="COD">COD</option>
 								<option value="DANA">DANA - XXXXXXXXXXXX</option>
 								<option value="OVO">OVO - XXXXXXXXXXXX</option>

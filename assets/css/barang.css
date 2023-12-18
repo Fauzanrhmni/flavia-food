@@ -5,6 +5,7 @@
 	--color-danger: #cd0067;
 	--color-success: #88c23a;
 	--color-warning: #ffcc00;
+	--color-blue: #5ea5e7;
 	--color-white: #fff;
 	--color-info-dark: #7d8da1;
 	--color-info-light: #dce1eb;
@@ -366,10 +367,6 @@ th {
 	color: var(--color-dark);
 }
 
-/* tr:nth-child(even) {
-  background-color: var(--color-light);
-} */
-
 tr:hover {
 	background-color: var(--color-light);
 }
@@ -417,6 +414,29 @@ table .button .cta-danger {
 	font-weight: 500;
 }
 
+table .button .cta-blue {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.3rem 0.7rem;
+	background-color: var(--color-blue);
+	border-radius: 0.5rem;
+	color: var(--color-white);
+	font-weight: 500;
+}
+
+table .button .cta-gray {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.3rem 0.7rem;
+	background: none;
+	border: 2px solid var(--color-info-light);
+	border-radius: 0.5rem;
+	color: var(--color-info-light);
+	font-weight: 500;
+}
+
 table .button .cta-success:hover {
 	background-color: #7baf36;
 }
@@ -427,6 +447,10 @@ table .button .cta-warning:hover {
 
 table .button .cta-danger:hover {
 	background-color: #b8025d;
+}
+
+table .button .cta-blue:hover {
+	background-color: #5096d8;
 }
 
 /* Footer */

@@ -59,9 +59,8 @@ class Data_barang extends CI_Controller
     redirect('admin/data_barang/');
   }
 
-
   public function editBarang($id) {
-    $data['title'] = 'Role';
+    $data['title'] = 'Data Barang';
     $data['admin'] = 'Admin';
     $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
     $this->load->model('Model_brg', 'barang');

@@ -8,6 +8,7 @@ class Model_invoice extends CI_Model {
     $nama = $this->input->post('nama');
     $alamat = $this->input->post('alamat');
     $notes = $this->input->post('notes');
+    $email = $this->input->post('email');
     // $contact = $this->input->post('contact');
     // $pembayaran = $this->input->post('pembayaran');
 
@@ -15,6 +16,7 @@ class Model_invoice extends CI_Model {
       'nama' => $nama,
       'alamat' => $alamat,
       'notes' => $notes,
+      'email' => $email,
       'tgl_pesan' => date('Y-m-d H:i:s'),
       'batas_bayar' => date('Y-m-d H:i:s', mktime(date('H'), date('i'), date('s'), date('m'), date('d') + 1, date('Y')))
     );
@@ -32,7 +34,6 @@ class Model_invoice extends CI_Model {
 
       $this->db->insert('tb_pesanan', $data);
     }
-
     return TRUE;
   }
 
@@ -59,6 +60,14 @@ class Model_invoice extends CI_Model {
       return false;
     }
   }
+
+  // public function ambil_id_invoice()
+  // {
+  //   $this->db->select('tb_pesanan.*, tb_invoice.nama, tb_invoice.tgl_pesan, tb_invoice.batas_bayar');
+  //   $this->db->from('tb_pesanan');
+  //   $this->db->join('tb_invoice', 'tb_pesanan.id_invoice = tb_invoice.id', 'left');
+  //   return $this->db->get()->result();
+  // }
   
   public function ambil_id_pesanan($id_invoice)
   {
@@ -70,13 +79,6 @@ class Model_invoice extends CI_Model {
     }
   }
 
-  // public function deleted($where, $table)
-	// {
-	// 	$this->db->where($where);
-	// 	$this->db->delete($table);
-	// }
-  
-
   public function deleted($id_invoice)
   {
     // Hapus data dari tabel tb_pesanan
@@ -86,5 +88,37 @@ class Model_invoice extends CI_Model {
     // Hapus data dari tabel tb_invoice
     $this->db->where('id', $id_invoice);
     $this->db->delete('tb_invoice');
+  }
+
+  public function get_all_pesanan()
+  {
+    $this->db->select('tb_pesanan.*, tb_invoice.nama AS nama_pemesan, tb_invoice.alamat');
+    $this->db->from('tb_pesanan');
+    $this->db->join('tb_invoice', 'tb_pesanan.id_invoice = tb_invoice.id', 'left');
+    return $this->db->get()->result();
+  }
+
+  public function update_status_pesanan($id_invoice, $new_status)
+  {
+    $data = array('status' => $new_status);
+    $this->db->where('id', $id_invoice);
+    $this->db->update('tb_invoice', $data);
+  }
+
+  public function get_all_pesanan_user($email)
+  {
+    $this->db->select('tb_pesanan.*, tb_invoice.email');
+    $this->db->from('tb_pesanan');
+    $this->db->join('tb_invoice', 'tb_pesanan.id_invoice = tb_invoice.id', 'left');
+    $this->db->where('tb_invoice.email', $email);
+
+    return $this->db->get()->result();
+  }
+
+  public function hapus_pesanan($id_pesanan) {
+    // Hapus pesanan dari tabel tb_pesanan berdasarkan ID
+    $this->db->where('id', $id_pesanan);
+    $this->db->delete('tb_pesanan');
+    // Pastikan fungsi ini menghapus pesanan dengan benar berdasarkan ID yang diberikan
   }
 }
