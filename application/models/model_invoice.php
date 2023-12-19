@@ -43,18 +43,28 @@ class Model_invoice extends CI_Model {
 
   public function tampil_data()
   {
-      $email = $this->session->userdata('email');
-      $this->db->select('tb_invoice.*');
-      $this->db->from('tb_invoice');
-      $this->db->join('user', 'user.email = tb_invoice.email'); //cokot email pengguna nu login JOIN keun jg nu kr login dina tb_invoice
-      $this->db->where('user.email', $email);
-      $result = $this->db->get();
-      
-      if($result->num_rows() > 0) {
-          return $result->result();
-      } else {
-          return false;
-      }
+    $email = $this->session->userdata('email');
+    $this->db->select('tb_invoice.*');
+    $this->db->from('tb_invoice');
+    $this->db->join('user', 'user.email = tb_invoice.email'); //cokot email pengguna nu login JOIN keun jg nu kr login dina tb_invoice
+    $this->db->where('user.email', $email);
+    $result = $this->db->get();
+    
+    if($result->num_rows() > 0) {
+        return $result->result();
+    } else {
+        return false;
+    }
+  }
+
+  public function tampil_data_admin()
+  {
+    $result = $this->db->get('tb_invoice');
+    if($result->num_rows() > 0) {
+      return $result->result();
+    } else {
+      return false;
+    }
   }
   public function ambil_id_invoice($id_invoice)
   {

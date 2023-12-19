@@ -8,6 +8,8 @@
 </div>
 
 <div class="transaksi">
+	<?php if (empty($invoice)) : ?>
+	<?php else : ?>
 	<?php 
   foreach ($invoice as $key => $item) :?>
 	<div class="detail">
@@ -63,4 +65,5 @@
 		</div>
 	</div>
 	<?php endforeach; ?>
+	<?php endif; ?>
 </div>

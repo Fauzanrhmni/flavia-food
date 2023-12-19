@@ -12,7 +12,7 @@ class Invoice extends CI_Controller
   public function index(){
 		$data['title'] = 'Invoices';
     $data['admin'] = 'Admin';
-    $data['invoice'] = $this->model_invoice->tampil_data();
+    $data['invoice'] = $this->model_invoice->tampil_data_admin();
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 		// $data['pesanan'] = $this->model_invoice->get_all_pesanan();
 
