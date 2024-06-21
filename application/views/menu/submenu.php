@@ -205,7 +205,7 @@
         <div class="form-submenu" id="modal-submenu">
           <div class="submenu-container">
             <a href="#" class="close-icon-submenu"><span class="material-symbols-outlined">close</span></a>
-            <h5>Add New Menu</h5>
+            <h5>Add New Sub Menu</h5>
             <form action="<?= base_url('menu/submenu'); ?>" method="post">
               <div class="input-group">
                 <input type="text" name="title" id="title" placeholder="Submenu title">

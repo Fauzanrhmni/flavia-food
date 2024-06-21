@@ -1,4 +1,8 @@
     <div class="table">
+          <div class="print" style="display: flex;">
+            <a href=" <?= base_url('admin/invoice/print'); ?>" style="display: flex; align-items: center; justify-content: center; padding: 0.3rem 0.7rem; background-color: var(--color-blue); border-radius: 0.5rem; color: var(--color-white); font-weight: 500; margin-right: 0.5rem;"><span class="material-symbols-outlined"> print </span></a>
+            <a style="display: flex; align-items: center; justify-content: center; padding: 0.3rem 0.7rem; background-color: var(--color-danger); border-radius: 0.5rem; color: var(--color-white); font-weight: 500;"><span class="material-symbols-outlined"> picture_as_pdf </span></a>
+          </div>
           <?= $this->session->flashdata('message'); ?>
           <?php if (empty($invoice)) : ?>
             <table class="table-submenu">
@@ -34,19 +38,6 @@
               <td><?= $i++ ?></td>
               <td><?= $inv->nama ?></td>
               <td><?= $inv->alamat ?></td>
-              <!-- <td><?= $inv->tgl_pesan ?></td>
-              <td><?= $inv->batas_bayar ?></td> -->
-              <!-- <td>
-                <?php
-                if (isset($inv->notes) && !empty($inv->notes)) {
-                    echo $inv->notes;
-                } else {
-                    echo '<div style="display: flex; align-items: center;">
-                    <div style="font-size: 1rem; font-weight: 600; color: var(--color-danger); padding: 0.3rem 1rem; border-radius: 0.8rem; border: 2px solid var(--color-danger);">None</div>
-                    </div>';
-                }
-                ?>
-              </td> -->
 
               <td>
               <?php

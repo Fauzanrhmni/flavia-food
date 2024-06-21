@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2023 at 03:55 PM
+-- Generation Time: Dec 20, 2023 at 12:13 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -42,21 +42,22 @@ CREATE TABLE `tb_barang` (
 --
 
 INSERT INTO `tb_barang` (`id`, `nama_brg`, `keterangan`, `kategori`, `harga`, `stok`, `gambar`) VALUES
-(1, 'Double Beef Burger', 'hidangan burger yang terdiri dari dua lapis daging sapi panggang, yang disajikan di antara roti burger. Setiap lapisan daging memberikan rasa gurih dan keempukan, sementara roti burger menyempurnakan pengalaman menyantap deng', 'junkfood', 25000, 2, 'burger.jpg'),
-(2, 'Formaggio Pizza', 'Pizza yang dilapisi saus tomat segar dengan taburan keju mozzarella yang meleleh, diberi sedikit daun basil segar dan memiliki rasa yang gurih, manis dan sedikit pedas.', 'pizza', 60000, 6, 'pizza.jpg'),
-(3, 'Pulen Rice', 'Makanan pokok yang populer di berbagai belahan dunia, Nasi memiliki tekstur lembut dan rasa yang netral, membuatnya cocok sebagai pendamping berbagai hidangan.', 'junkfood', 10000, 19, 'rice.jpg'),
-(4, 'Spicy Spaghetti', 'Hidangan pasta yang kenyal, disajikan dengan limpahan saus bolognese yang terbuat dari daging sapi cincang dengan rempah-rempah yang menghasilkan rasa gurih dan sedikit manis.', 'mie', 30000, 31, 'spagetti.jpg'),
+(1, 'Double Beef Burger', 'hidangan burger yang terdiri dari dua lapis daging sapi panggang, yang disajikan di antara roti burger. Setiap lapisan daging memberikan rasa gurih dan keempukan, sementara roti burger menyempurnakan pengalaman menyantap deng', 'Select Kategori', 25000, 5, 'burger.jpg'),
+(2, 'Formaggio Pizza', 'Pizza yang dilapisi saus tomat segar dengan taburan keju mozzarella yang meleleh, diberi sedikit daun basil segar dan memiliki rasa yang gurih, manis dan sedikit pedas.', 'pizza', 60000, 3, 'pizza.jpg'),
+(3, 'Pulen Rice', 'Makanan pokok yang populer di berbagai belahan dunia, Nasi memiliki tekstur lembut dan rasa yang netral, membuatnya cocok sebagai pendamping berbagai hidangan.', 'junkfood', 10000, 16, 'rice.jpg'),
+(4, 'Spicy Spaghetti', 'Hidangan pasta yang kenyal, disajikan dengan limpahan saus bolognese yang terbuat dari daging sapi cincang dengan rempah-rempah yang menghasilkan rasa gurih dan sedikit manis.', 'mie', 30000, 29, 'spagetti.jpg'),
 (5, 'Beef Burger', 'hidangan yang terdiri dari lapisan daging sapi panggang yang diletakkan di antara dua irisan roti burger. Daging sapi tersebut biasanya dibentuk menjadi patty dan dipanggang atau digrill untuk memberikan rasa gurih dan keempu', 'junkfood', 15000, 9, 'burger2.jpg'),
 (6, 'French Fries', 'Potongan kentang yang dipotong tipis dan digoreng hingga kecokelatan untuk menciptakan tekstur yang renyah di luar dan lembut di dalam.', 'junkfood', 13000, 9, 'frenchfries.jpg'),
 (7, 'Chocho Ice Cream', 'Dibuat dari krim lembut yang menyatu dengan coklat murni berkualitas tinggi, setiap suapannya menghadirkan sensasi lembut dan kaya rasa coklat.', 'icecream', 12000, 14, 'icecreamcoklat.jpg'),
-(8, 'White Caramel Ice Cream', 'Manisnya caramel yang dipadukan dengan manfaat susu, yang memberikan kalsium, protein dan karbohidrat dalam white caramel ice cream, menjadikan varian ini adalah pilihan yang banyak di sukai, nikmati langsung dan jadikan dese', 'icecream', 14000, 10, 'icecreamvanilla.jpg'),
+(8, 'White Caramel Ice Cream', 'Manisnya caramel yang dipadukan dengan manfaat susu, yang memberikan kalsium, protein dan karbohidrat dalam white caramel ice cream, menjadikan varian ini adalah pilihan yang banyak di sukai, nikmati langsung dan jadikan dese', 'icecream', 14000, 9, 'icecreamvanilla.jpg'),
 (9, 'Beef Cheese Burger', 'Burger yang terdiri dari dua lapis daging sapi panggang, keju leleh, serta berbagai tambahan seperti selada, tomat, bawang, dan saus, semuanya disajikan dalam sepotong roti burger.', 'junkfood', 35000, 25, 'bigburger.jpg'),
 (10, 'Hot Dog', 'Inovasi daging sosis, yang disajikan dengan roti dan sayuran', 'junkfood', 17000, 23, 'hotdog.jpg'),
 (11, 'Fresh Cola', 'Minuman dengan kandungan soda extra ice yang segarMinuman dengan kandungan soda extra ice yang segar', 'drink', 17000, 19, 'flaviacoke.jpg'),
 (12, 'Double Kebab ', 'Berupa kulit tortilla yang diisi dengan daging, sayuran, dan aneka sauss, dimasak dengan cara di panggang, nikmati langsung dan anda dapat merasakan rasa yang unik', 'junkfood', 22000, 49, 'sandwich.jpg'),
 (13, 'Waffle', 'Dessert yang terbuat dari adonan beragi atau adonan yang dimasak di antara dua piring yang diberi pola untuk memberikan ukuran, bentuk, dan kesan permukaan yang khas, waffle ini sangat banyak digemari terutama di belgia, disi', 'icecream', 23000, 20, 'waffle.jpg'),
 (14, 'Chicken Things', 'Potongan sayap ayam yang biasanya digoreng atau dipanggang, dengan tekstur renyah di luar dan daging ayam yang lembut di dalamnya. Wings ini sering disajikan dengan berbagai saus, seperti buffalo, barbecue, atau saus pedas, u', 'junkfood', 30000, 99, 'chicken.jpg'),
-(15, 'Cream Soup', 'Sup yang disiapkan memakai cream, krim ringan, half and half atau susu sebagai bahan utama, daging ayam dan susu yang memberikan rasa yang lezat', 'junkfood', 17000, 998, 'creamsop.jpg');
+(15, 'Cream Soup', 'Sup yang disiapkan memakai cream, krim ringan, half and half atau susu sebagai bahan utama, daging ayam dan susu yang memberikan rasa yang lezat', 'junkfood', 17000, 998, 'creamsop.jpg'),
+(16, 'Matcha', '-', 'drink', 10000, 20, 'matchamilktea.jpg');
 
 -- --------------------------------------------------------
 
@@ -80,8 +81,8 @@ CREATE TABLE `tb_invoice` (
 --
 
 INSERT INTO `tb_invoice` (`id`, `nama`, `alamat`, `notes`, `tgl_pesan`, `batas_bayar`, `email`, `status`) VALUES
-(10, 'sadasd', 'asdasd', '', '2023-12-18 21:32:24', '2023-12-19 21:32:24', 'mitha12345@gmail.com', '0'),
-(11, 'DADA', 'wfdwf', 'fafaf', '2023-12-18 21:36:44', '2023-12-19 21:36:44', 'fauzan123@gmail.com', '0');
+(14, 'Fauzan', 'Kec. Indihiang', 'Minta Air', '2023-12-19 15:18:38', '2023-12-20 15:18:38', 'fauzanrahmani1315@gmail.com', '3'),
+(15, 'Mitha', 'Singaparna', 'Haloo', '2023-12-20 05:21:30', '2023-12-21 05:21:30', 'mitha12345@gmail.com', '0');
 
 -- --------------------------------------------------------
 
@@ -104,10 +105,13 @@ CREATE TABLE `tb_pesanan` (
 --
 
 INSERT INTO `tb_pesanan` (`id`, `id_invoice`, `id_brg`, `nama_brg`, `jumlah`, `harga`, `status`) VALUES
-(16, 10, 1, 'Double Beef Burger', 1, 25000, '0'),
-(17, 10, 2, 'Formaggio Pizza', 1, 60000, '0'),
-(18, 11, 1, 'Double Beef Burger', 1, 25000, '0'),
-(19, 11, 2, 'Formaggio Pizza', 1, 60000, '0');
+(25, 14, 1, 'Double Beef Burger', 1, 25000, '0'),
+(26, 14, 2, 'Formaggio Pizza', 1, 60000, '0'),
+(27, 14, 4, 'Spicy Spaghetti', 1, 30000, '0'),
+(28, 14, 3, 'Pulen Rice', 1, 10000, '0'),
+(29, 15, 1, 'Double Beef Burger', 1, 25000, '0'),
+(30, 15, 2, 'Formaggio Pizza', 1, 60000, '0'),
+(31, 15, 8, 'White Caramel Ice Cream', 1, 14000, '0');
 
 --
 -- Triggers `tb_pesanan`
@@ -144,7 +148,8 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
 (1, 'Fauzan Rahmani Ahdan', 'fauzan123@gmail.com', 'fauzan.jpg', '$2y$10$Gze89wGmZRyt/cnotvYw4e/rVxa0073hNRNsHFhR1wMoRp4uc6Ihi', 1, 1, 1701133261),
 (2, 'Mitha Ayu Desfany', 'mitha12345@gmail.com', 'happy-burger.jpg', '$2y$10$Z4Qyonx5osOewg3MKN3I0.5Gjdn//MZW7VemspKjjBNlymgJ7eX6W', 2, 1, 1701133719),
-(3, 'Coet Mutu', 'coetmutu355@gmail.com', 'default.jpg', '$2y$10$DXfP2i7lXJLtZXmDtSm..upXqWNqwNpCic0aU.ah9Kl5ln/X781W.', 2, 1, 1702711438);
+(3, 'Coet Mutu', 'coetmutu355@gmail.com', 'default.jpg', '$2y$10$DXfP2i7lXJLtZXmDtSm..upXqWNqwNpCic0aU.ah9Kl5ln/X781W.', 2, 1, 1702711438),
+(4, 'Fauzan Rahmani', 'fauzanrahmani1315@gmail.com', 'DSC_0426-removebg-preview_1.png', '$2y$10$xRbBb4j1L0IYHArPiw9i.OjzdEEzD2qraobo30qtOS9/ihbJIhYOO', 2, 1, 1702973740);
 
 -- --------------------------------------------------------
 
@@ -186,7 +191,8 @@ CREATE TABLE `user_menu` (
 INSERT INTO `user_menu` (`id`, `menu`) VALUES
 (1, 'Admin'),
 (2, 'User'),
-(3, 'Menu');
+(3, 'Menu'),
+(18, 'Apa aja');
 
 -- --------------------------------------------------------
 
@@ -237,7 +243,7 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 (8, 2, 'Change Password', 'admin/dashboard_admin/changepassword', 'lock', 1),
 (9, 1, 'Data User', 'admin/dashboard_admin/datauser', 'Person', 1),
 (10, 1, 'Role', 'admin/dashboard_admin/role', 'group_add', 1),
-(11, 1, 'Pengiriman', 'admin/invoice/pengiriman', 'local_shipping', 1);
+(11, 1, 'Pengiriman', 'admin/invoice/pengiriman', 'local_shipping', 0);
 
 -- --------------------------------------------------------
 
@@ -318,25 +324,25 @@ ALTER TABLE `user_token`
 -- AUTO_INCREMENT for table `tb_barang`
 --
 ALTER TABLE `tb_barang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `tb_invoice`
 --
 ALTER TABLE `tb_invoice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `tb_pesanan`
 --
 ALTER TABLE `tb_pesanan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user_access_menu`
@@ -348,7 +354,7 @@ ALTER TABLE `user_access_menu`
 -- AUTO_INCREMENT for table `user_menu`
 --
 ALTER TABLE `user_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `user_role`
@@ -360,13 +366,13 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT for table `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `user_token`
 --
 ALTER TABLE `user_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -136,4 +136,14 @@ class Model_invoice extends CI_Model {
     $this->db->delete('tb_pesanan');
     // Pastikan fungsi ini menghapus pesanan dengan benar berdasarkan ID yang diberikan
   }
+
+  public function getInvoice()
+  {
+    return $this->db->get('tb_invoice');
+  }
+
+  public function getPesanan()
+  {
+    return $this->db->get('tb_pesanan');
+  }
 }

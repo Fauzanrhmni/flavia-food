@@ -75,14 +75,19 @@ class Invoice extends CI_Controller
 	}
 
 	public function hapus_pesanan($id_pesanan) {
-			// Lakukan validasi admin di sini
-			// Pastikan hanya admin yang berhak untuk menghapus pesanan
-
-			// Panggil model untuk melakukan penghapusan pesanan
-			$this->model_invoice->hapus_pesanan($id_pesanan);
-
-			// Redirect kembali ke halaman status pesanan
-			redirect('admin/invoice');
+		// Lakukan validasi admin di sini
+		// Pastikan hanya admin yang berhak untuk menghapus pesanan
+		// Panggil model untuk melakukan penghapusan pesanan
+		$this->model_invoice->hapus_pesanan($id_pesanan);
+		// Redirect kembali ke halaman status pesanan
+		redirect('admin/invoice');
 	}
+
+	public function print() {
+		$data['invoice'] = $this->model_invoice->getInvoice()->result_array();
+		$data['pesanan'] = $this->model_invoice->getPesanan()->result_array();
+		$this->load->view('laporan/print_inv', $data);
+	}
+
 }
 

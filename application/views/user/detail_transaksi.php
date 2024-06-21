@@ -39,23 +39,25 @@
 				</div>
 				<div class="price">
 					<label>Status</label>
-					<h4>
+					<h4 style="display: flex;">
 						<?php
 							switch ($item->status) {
 								case '0':
 									echo '<div style="font-size: 1rem; font-weight: 600; color: var(--red); padding: 0.3rem 0.5rem; border-radius: 0.8rem; border: 2px solid var(--red); width: 11rem; text-align: center;">Sedang Diproses</div>';
 									break;
 								case '1':
-									echo '<div style="font-size: 1rem; font-weight: 600; color: var(--yellow); padding: 0.3rem 0.5rem; border-radius: 0.8rem; border: 2px solid var(--yellow); width: 7rem; text-align: center">Dikemas</div>';
+									echo '<div style="font-size: 1rem; font-weight: 600; color: var(--yellow); padding: 0.3rem 0.5rem; border-radius: 0.8rem; border: 2px solid var(--yellow); width: 7rem; text-align: center;">Dikemas</div>';
 									break;
 								case '2':
-									echo anchor('dashboard/update_status_user/'. $item->id . '/3', '<div style="font-size: 1rem; font-weight: 600; color: var(--blue); padding: 0.3rem 0.5rem; border-radius: 0.8rem; border: 2px solid var(--blue); width: 6rem; text-align: center">Dikirim</div>');
+									echo '<div style="font-size: 1rem; font-weight: 600; color: var(--blue); padding: 0.3rem 0.5rem; border-radius: 0.8rem; border: 2px solid var(--blue); width: 6rem; text-align: center;">Dikirim</div>';
+
+									echo anchor('dashboard/update_status_user/'. $item->id . '/3', '<div style="margin-left: 1rem; background-color: var(--blue); font-size: 1rem; font-weight: 600; color: var(--white); padding: 0.3rem 0.5rem; border-radius: 0.8rem; border: 2px solid var(--blue); width: 7rem; text-align: center;">Diterima</div>');
 									break;
 								case '3':
-									echo '<div style="font-size: 1rem; font-weight: 600; color: var(--green); padding: 0.3rem 0.5rem; border-radius: 0.8rem; border: 2px solid var(--green); width: 7rem; text-align: center">Diterima</div>';
+									echo '<div style="font-size: 1rem; font-weight: 600; color: var(--green); padding: 0.3rem 0.5rem; border-radius: 0.8rem; border: 2px solid var(--green); width: 7rem; text-align: center;">Diterima</div>';
 									break;
 								default:
-									echo '<div style="font-size: 1rem; font-weight: 600; color: var(--red); padding: 0.3rem 0.5rem; border-radius: 0.8rem; border: 2px solid var(--red); width: 11rem; text-align: center">Tidak Valid</div>';
+									echo '<div style="font-size: 1rem; font-weight: 600; color: var(--red); padding: 0.3rem 0.5rem; border-radius: 0.8rem; border: 2px solid var(--red); width: 11rem; text-align: center;">Tidak Valid</div>';
 									break;
 							}
 						?>

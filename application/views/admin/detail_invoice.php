@@ -72,8 +72,10 @@
         <tr>
           <td colspan="5">
             <?php
-            if (isset($inv->notes) && !empty($inv->notes)) {
-              echo 'Catatan Customer' . $inv->notes;
+            if (isset($invoice->notes) && !empty($invoice->notes)) {
+              echo '<div style="display: flex; align-items: center; justify-content: center;">
+              <div style="font-size: 1rem; font-weight: 600; color: var(--color-danger); padding: 0.3rem 1rem; border-radius: 0.8rem; border: 2px solid var(--color-danger);">Catatan Customer : '. $invoice->notes .'</div>
+              </div>';
             } else {
               echo '<div style="display: flex; align-items: center; justify-content: center;">
               <div style="font-size: 1rem; font-weight: 600; color: var(--color-danger); padding: 0.3rem 1rem; border-radius: 0.8rem; border: 2px solid var(--color-danger);">Catatan Customer : None</div>
