@@ -89,5 +89,27 @@ class Invoice extends CI_Controller
 		$this->load->view('laporan/print_inv', $data);
 	}
 
+	public function export_pdf()
+  {
+		$data['invoice'] = $this->model_invoice->getInvoice()->result_array();
+		$data['pesanan'] = $this->model_invoice->getPesanan()->result_array();
+    // $this->load->library('dompdf_gen'); 
+    $sroot = $_SERVER['DOCUMENT_ROOT'];
+    include $sroot . "/flavia-food/application/third_party/dompdf/autoload.inc.php";
+    $dompdf = new Dompdf\Dompdf();
+    $this->load->view('laporan/print_inv', $data);
+    $paper_size  = 'A4'; // ukuran kertas
+    $orientation = 'landscape'; //tipe format kertas potrait atau landscape
+    
+    $html = $this->output->get_output();
+    $dompdf->setPaper($paper_size, $orientation);
+
+    //Convert to PDF
+    $dompdf->loadHtml($html);
+    $dompdf->render();
+    $dompdf->stream("laporan_invoice_flavia_food.pdf", array('Attachment' => 0));
+    // nama file pdf yang di hasilkan
+  }
+
 }
 
